@@ -1,6 +1,6 @@
 {
   "version": "1.7", 
   "versionCode": 1 ,
-  "zipUrl": "新版本模块zip包的下载链接",
+  "zipUrl": "https://github.com/imacte/YukiCpuScheduler_update/releases/download/YukiCpuScheduler-1.7.1/YukiCpuScheduler-1.7.1.zip",
   "changelog": "https://raw.githubusercontent.com/imacte/YukiCpuScheduler_update/main/changelog.md"
 }
