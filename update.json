@@ -2,5 +2,5 @@
   "version": "1.7", 
   "versionCode": 1 ,
   "zipUrl": "新版本模块zip包的下载链接",
-  "changelog": "https://raw.githubusercontent.com/imacte/YukiCpuScheduler_update/main/changelog.md" // 可选
+  "changelog": "https://raw.githubusercontent.com/imacte/YukiCpuScheduler_update/main/changelog.md"
 }
