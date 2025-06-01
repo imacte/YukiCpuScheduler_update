@@ -282,6 +282,35 @@ YukiCpuScheduler 主要通过以下 INI 格式的配置文件进行配置，它�
         * 如果此应用没有提供 `ThreadRule_Default`，则会查找 `default_config.ini` 中 `[ManualThreadAffinity] DefaultAffinityForUnmatchedGlobal` 的设置作为备选（尤其是在 `manual` 模式下）。在 `hybrid` 模式下，如果两处都没有为线程提供手动规则，则线程会进入自动动态分配逻辑。
         * 示例: `ThreadRule_Default = "MediumCore,SmallCore"`
 
+    * **配置示例 (`app_profiles.ini`)**
+
+```ini
+; --- 王者荣耀示例 ---
+[com.tencent.tmgp.sgame]
+mode = performance ; 此游戏运行时使用 performance 模式
+
+; 覆盖 performance 模式中的参数 (仅对此游戏生效)
+BigCoreMinFreq = 2000000
+SuperBigCoreSchedutilUpRateLimitUs = 4000
+
+; 线程分配规则
+ThreadRule_UnityMain = "SuperBigCore0"
+ThreadRule_UnityGfxDeviceW = "BigCore"
+ThreadRule_RenderThread* = "BigCore0,BigCore1"
+ThreadRule_bqgThread-* = "SmallCore" ; 假设这是某种后台队列线程
+ThreadRule_Default = "MediumCore" ; 此游戏内其他未匹配线程使用所有中核
+
+; --- 某个阅读应用 ---
+[com.example.reader]
+mode = powersave
+BigCoreMaxFreq = 800000 ; 进一步限制大核频率
+
+; 此阅读应用不需要精细的线程分配，所以没有 ThreadRule_
+; 如果全局 ThreadAffinityControl Mode 是 manual，且 DefaultAffinityForUnmatchedGlobal 有效，则应用全局默认。
+; 如果是 hybrid，则其线程会尝试全局默认，然后可能进入自动分配。
+; 如果是 automatic，则其线程完全由自动分配逻辑处理。
+
+
 ## 🙏 贡献者致谢
 
 特别感谢以下开发者的贡献（按加入时间排序）：
