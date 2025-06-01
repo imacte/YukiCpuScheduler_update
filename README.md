@@ -315,9 +315,13 @@ BigCoreMaxFreq = 800000 ; 进一步限制大核频率
 
 ---
 
-## 🤝 贡献 (Contributing)
+## 🙏 贡献者致谢
 
-欢迎通过 Pull Requests 贡献代码，或在 Issues 中报告问题和提出建议。
+特别感谢以下开发者的贡献（按加入时间排序）：
+
+| 贡献者 | 贡献领域 |
+|--------|----------|
+| [@AquaPuff🐋](https://github.com/zgquangui) | 配置文件的编辑 |
 
 ## 📜 许可证 (License)
 
