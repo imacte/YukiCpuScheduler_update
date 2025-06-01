@@ -282,6 +282,19 @@ YukiCpuScheduler 主要通过以下 INI 格式的配置文件进行配置，它�
         * 如果此应用没有提供 `ThreadRule_Default`，则会查找 `default_config.ini` 中 `[ManualThreadAffinity] DefaultAffinityForUnmatchedGlobal` 的设置作为备选（尤其是在 `manual` 模式下）。在 `hybrid` 模式下，如果两处都没有为线程提供手动规则，则线程会进入自动动态分配逻辑。
         * 示例: `ThreadRule_Default = "MediumCore,SmallCore"`
 
+## 🙏 贡献者致谢
+
+特别感谢以下开发者的贡献（按加入时间排序）：
+
+| 贡献者 | 贡献领域 |
+|--------|----------|
+| [@AquaPuff🐋](https://github.com/zgquangui) | 配置文件的编辑 |
+
+## 📜 许可证 (License)
+
+本项目采用 MIT 许可证。
+
+
 **配置示例 (`app_profiles.ini`)**
 
 ```ini
@@ -315,14 +328,3 @@ BigCoreMaxFreq = 800000 ; 进一步限制大核频率
 
 ---
 
-## 🙏 贡献者致谢
-
-特别感谢以下开发者的贡献（按加入时间排序）：
-
-| 贡献者 | 贡献领域 |
-|--------|----------|
-| [@AquaPuff🐋](https://github.com/zgquangui) | 配置文件的编辑 |
-
-## 📜 许可证 (License)
-
-本项目采用 MIT 许可证。
