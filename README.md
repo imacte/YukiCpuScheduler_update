@@ -289,7 +289,7 @@ YukiCpuScheduler 主要通过以下 INI 格式的配置文件进行配置，它�
 | 贡献者 | 贡献领域 |
 |--------|----------|
 | [@AquaPuff🐋](https://github.com/zgquangui) | 配置文件的编辑 |
-| [@ShenEternal](https://github.com/Asbzyyds) | 配置文件的编辑 |
+| [@ShenEternal](https://github.com/Asbzyyds) | 一些指导 |
 
 
 ## 📜 许可证 (License)
