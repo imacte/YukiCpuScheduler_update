@@ -1,6 +1,6 @@
 {
-  "version": "v1.9.2", 
-  "versionCode": 10902 ,
-  "zipUrl": "https://github.com/imacte/YukiCpuScheduler_update/releases/download/YukiCpuScheduler-1.9.2/YukiCpuScheduler-1.9.2.zip",
+  "version": "v1.9.3", 
+  "versionCode": 10903 ,
+  "zipUrl": "https://github.com/imacte/YukiCpuScheduler_update/releases/download/YukiCpuScheduler-1.9.3/YukiCpuScheduler-1.9.3.zip",
   "changelog": "https://raw.githubusercontent.com/imacte/YukiCpuScheduler_update/main/changelog.md"
 }
