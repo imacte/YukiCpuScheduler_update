@@ -134,8 +134,8 @@ YukiCpuScheduler 在初始化阶段就已经关闭了大部分主流的用户态
 ```ini
 [meta]
 name = "YukiCpuScheduler正式版模型"
-author = MoWei
-configVersion = 13
+author = yuki
+configVersion = 14
 loglevel = "INFO"
 ```
 
