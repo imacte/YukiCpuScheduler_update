@@ -58,8 +58,8 @@ CpuIdle:
 
 # Cpuset 分组
 Cpuset:
-  top_app: "2-7"
-  foreground: "2-7"
+  top_app: "0-7"
+  foreground: "0-7"
   restricted: "0-5"
   system_background: "1-2"
   background: "0-2"
