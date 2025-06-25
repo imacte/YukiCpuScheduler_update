@@ -1076,7 +1076,7 @@ mark.via:
     - "*"
 
 # MT管理器
-bin.mt.plus:
+bin.mt.plus.canary:
   "3-6":
     - "RenderThread"
     - "mali-*"
