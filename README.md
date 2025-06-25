@@ -191,8 +191,126 @@ CoreAllocation:
 | `cpuctlUclampBoostMin` | string | CPU 使用率控制最小值 (0-100) |
 | `cpuctlUclampBoostMax` | string | CPU 使用率控制最大值 (0-100) |
 
----
-**(后续的 `CoreFramework`, `IO_Settings`, `Other` 等部分的解释与之前类似，格式已更新，这里省略以保持简洁)**
+### 4️⃣ 核心架构参数 (CoreFramework)
+
+```ini
+[CoreFramework]
+SmallCorePath = 0
+MediumCorePath = 4
+BigCorePath = 0
+SuperBigCorePath = 0
+```
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `SmallCorePath` | int | 小核的 CPU 路径 |
+| `MediumCorePath` | int | 中核的 CPU 路径 |
+| `BigCorePath` | int | 大核的 CPU 路径 |
+| `SuperBigCorePath` | int | 超大核的 CPU 路径 |
+
+### 5️⃣ I/O 设置 (IO_Settings)
+
+```ini
+[IO_Settings]
+Scheduler = ""
+IO_optimization = false
+```
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `Scheduler` | string | I/O 调度器类型 (如 ssg、bfq 等，空值表示不修改) |
+| `IO_optimization` | bool | 启用 I/O 优化功能 |
+
+### 6️⃣ QcomBus 参数优化 (Other)
+
+```ini
+[Other]
+AdjQcomBus_dcvs = false
+```
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `AdjQcomBus_dcvs` | bool | 优化 QCOM 设备的 DDR/LLCC/DDRQOS/L3 参数 (7GEN2+ 设备效果最佳) |
+
+### 7️⃣ EAS 调度器参数 (EasSchedulerVaule)
+
+```ini
+[EasSchedulerVaule]
+sched_min_granularity_ns = "2000000" 
+sched_nr_migrate = "30"
+sched_wakeup_granularity_ns = "3200000"
+sched_schedstats = "0"
+```
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `sched_min_granularity_ns` | string | EAS 调度器最小调度粒度 (纳秒) |
+| `sched_nr_migrate` | string | 控制任务在 CPU 核心间迁移的次数 |
+| `sched_wakeup_granularity_ns` | string | EAS 调度器调整任务唤醒时间的粒度 (纳秒) |
+| `sched_schedstats` | string | 是否启用调度统计信息收集 (0=禁用) |
+
+### 8️⃣ CPU Idle 调度器 (CpuIdle)
+
+```ini
+[CpuIdle]
+current_governor = ""
+```
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `current_governor` | string | CPU Idle 调度器模式 (高通推荐: qcom-cpu-lpm，联发科推荐: menu，空值表示不调整) |
+
+### 9️⃣ CPUSet 配置 (Cpuset)
+
+```ini
+[Cpuset]
+top_app = "0-7"
+foreground = "0-7"
+restricted = "0-5"
+system_background = "1-2"
+background = "0-2"
+```
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `top_app` | string | 顶层应用可使用的 CPU 核心范围 |
+| `foreground` | string | 前台应用可使用的 CPU 核心范围 |
+| `restricted` | string | 前台任务加速时可使用的 CPU 核心范围 |
+| `system_background` | string | 系统后台进程可使用的 CPU 核心范围 |
+| `background` | string | 后台进程可使用的 CPU 核心范围 |
+
+### 🔟 功耗模型开发 (以 performance 模式为例)
+
+```ini
+[performance]
+scaling_governor = "schedutil"
+UclampTopAppMin = "0"
+UclampTopAppMax = "100"
+UclampTopApplatency_sensitive = "1"
+UclampForeGroundMin = "0"
+UclampForeGroundMax = "80"
+UclampBackGroundMin = "0"
+UclampBackGroundMax = "50"
+SmallCoreMaxFreq = 10000
+MediumCoreMaxFreq = 2500
+BigCoreMaxFreq = 2700
+SuperBigCoreMaxFreq = 2700
+ufsClkGate = false
+```
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `scaling_governor` | string | 指定 0-7 核心的 CPU 调速器 |
+| `UclampTopAppMin/Max` | string | 顶层 APP 可使用的 CPU 频率下限/上限 (0-100) |
+| `UclampTopApplatency_sensitive` | string | 延迟敏感性参数，告知调度器前台应用对延迟敏感 |
+| `UclampForeGroundMin/Max` | string | 前台 APP 可使用的 CPU 频率下限/上限 (0-100) |
+| `UclampBackGroundMin/Max` | string | 后台 APP 可使用的 CPU 频率下限/上限 (0-100) |
+| `SmallCoreMaxFreq` | int | 小核 CPU 最大频率 (0-10000) |
+| `MediumCoreMaxFreq` | int | 中核 CPU 最大频率 (0-10000) |
+| `BigCoreMaxFreq` | int | 大核 CPU 最大频率 (0-10000) |
+| `SuperBigCoreMaxFreq` | int | 超大核 CPU 最大频率 (0-10000) |
+| `ufsClkGate` | bool | UFS 时钟门设置 |
+
 ---
 
 ## 🧵 进阶功能：特定线程核心分配
