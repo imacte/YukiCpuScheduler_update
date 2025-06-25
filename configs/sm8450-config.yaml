@@ -1,0 +1,147 @@
+# 元数据信息
+meta:
+  name: "YukiCpuScheduler"
+  author: "yuki"
+  configVersion: 15
+  loglevel: "INFO"
+
+# 主要功能开关
+function:
+  DisableQcomGpu: true
+  AffintySetter: true
+  CpuIdleScaling_Governor: false
+  EasScheduler: true
+  cpuset: true
+  LoadBalancing: true
+  EnableFeas: false
+  AdjIOScheduler: true
+  AppLaunchBoost: true
+  EnableThreadAffinity: true
+
+# 待机模式配置
+Standby:
+  Enable: false
+  ScreenOffDelay: 300
+
+# 核心分配设置
+CoreAllocation:
+  cpusetCore: "4-7"
+  cpuctlUclampBoostMin: "0"
+  cpuctlUclampBoostMax: "100"
+
+# 核心框架路径
+CoreFramework:
+  SmallCorePath: 0
+  MediumCorePath: 4
+  BigCorePath: 7
+  SuperBigCorePath: 0
+
+# IO 调度器设置
+IO_Settings:
+  Scheduler: "bfq"
+  IO_optimization: true
+
+# 其他设置
+Other:
+  AdjQcomBus_dcvs: false
+
+# EAS 调度器参数
+EasSchedulerValue:
+  sched_min_granularity_ns: "2000000"
+  sched_nr_migrate: "30"
+  sched_wakeup_granularity_ns: "3200000"
+  sched_schedstats: "0"
+
+# CPU 空闲设置
+CpuIdle:
+  current_governor: ""
+
+# Cpuset 分组
+Cpuset:
+  top_app: "4-7"
+  foreground: "4-7"
+  restricted: "0-5"
+  system_background: "1-2"
+  background: "0-2"
+
+# --- 性能模式 ---
+
+# 省电模式
+powersave:
+  scaling_governor: "conservative"
+  UclampTopAppMin: "0"
+  UclampTopAppMax: "100"
+  UclampTopApplatency_sensitive: "0"
+  UclampForeGroundMin: "0"
+  UclampForeGroundMax: "70"
+  UclampBackGroundMin: "0"
+  UclampBackGroundMax: "50"
+  SmallCoreMinFreq: 500
+  SmallCoreMaxFreq: 1300
+  MediumCoreMinFreq: 600
+  MediumCoreMaxFreq: 1400
+  BigCoreMinFreq: 600
+  BigCoreMaxFreq: 1555
+  SuperBigCoreMinFreq: "min"
+  SuperBigCoreMaxFreq: "min"
+  ufsClkGate: false
+
+# 均衡模式
+balance:
+  scaling_governor: "walt"
+  UclampTopAppMin: "0"
+  UclampTopAppMax: "100"
+  UclampTopApplatency_sensitive: "0"
+  UclampForeGroundMin: "0"
+  UclampForeGroundMax: "70"
+  UclampBackGroundMin: "0"
+  UclampBackGroundMax: "50"
+  SmallCoreMinFreq: 600
+  SmallCoreMaxFreq: 1500
+  MediumCoreMinFreq: 700
+  MediumCoreMaxFreq: 1800
+  BigCoreMinFreq: 800
+  BigCoreMaxFreq: 1800
+  SuperBigCoreMinFreq: "min"
+  SuperBigCoreMaxFreq: 2300
+  ufsClkGate: false
+
+# 性能模式
+performance:
+  scaling_governor: "schedutil"
+  UclampTopAppMin: "0"
+  UclampTopAppMax: "100"
+  UclampTopApplatency_sensitive: "1"
+  UclampForeGroundMin: "0"
+  UclampForeGroundMax: "80"
+  UclampBackGroundMin: "0"
+  UclampBackGroundMax: "50"
+  SmallCoreMinFreq: 1000
+  SmallCoreMaxFreq: 1800
+  MediumCoreMinFreq: 1000
+  MediumCoreMaxFreq: 2000
+  BigCoreMinFreq: 1100
+  BigCoreMaxFreq: 2300
+  SuperBigCoreMinFreq: "min"
+  SuperBigCoreMaxFreq: 0
+  ufsClkGate: false
+
+# 极速模式
+fast:
+  scaling_governor: "walt"
+  UclampTopAppMin: "10"
+  UclampTopAppMax: "100"
+  UclampTopApplatency_sensitive: "1"
+  UclampForeGroundMin: "0"
+  UclampForeGroundMax: "80"
+  UclampBackGroundMin: "0"
+  UclampBackGroundMax: "50"
+  SmallCoreMinFreq: 1000
+  SmallCoreMaxFreq: "max"
+  MediumCoreMinFreq: 1000
+  MediumCoreMaxFreq: "max"
+  BigCoreMinFreq: 1100
+  BigCoreMaxFreq: "max"
+  SuperBigCoreMinFreq: "max"
+  SuperBigCoreMaxFreq: "max"
+  ufsClkGate: true

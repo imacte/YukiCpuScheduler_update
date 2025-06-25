@@ -1,0 +1,3 @@
+# DeamOpt 进程自身配置
+daemon_config:
+  loglevel: "ERROR"

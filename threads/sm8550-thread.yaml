@@ -1,0 +1,1157 @@
+# DeamOpt 进程自身配置
+daemon_config:
+  loglevel: "ERROR"
+
+# --- 游戏 ---
+
+# 王者荣耀
+com.tencent.tmgp.sgame:
+  "7":
+    - "UnityMain"
+  "3-6":
+    - "UnityGfxDeviceW"
+    - "Thread-*"
+    - "CoreThread"
+    - "NativeThread"
+  "3-5":
+    - "Job.worker*"
+  "0-1,3-6":
+    - "*"
+
+# 王者荣耀前瞻版
+com.tencent.tmgp.sgamece:
+  "7":
+    - "UnityMain"
+  "3-6":
+    - "UnityGfxDeviceW"
+    - "Thread-*"
+    - "CoreThread"
+    - "NativeThread"
+  "3-5":
+    - "Job.worker*"
+  "0-1,3-6":
+    - "*"
+
+# 和平精英
+com.tencent.tmgp.pubgmhd:
+  "5-7":
+    - "Thread-*"
+  "3-5":
+    - "RHIThread"
+    - "RenderThread*"
+  "3-6":
+    - "FAsyncLoading"
+    - "MainThread-UE4"
+  "3-4":
+    - "TaskGraphNP*"
+    - "NativeThread"
+
+# PUBG Mobile
+com.tencent.ig:
+  "5-7":
+    - "Thread-*"
+  "3-6":
+    - "RenderThread*"
+    - "MainThread-UE4"
+  "3-4":
+    - "TaskGraphNP*"
+    - "NativeThread"
+
+# 穿越火线
+com.tencent.tmgp.cf:
+  "7":
+    - "UnityMain"
+  "6":
+    - "UnityGfxDeviceW"
+  "3-5":
+    - "Thread-*"
+    - "FMOD mixer thre"
+    - "BackgroundWorke"
+    - "*"
+
+# QQ飞车
+com.tencent.tmgp.speedmobile:
+  "7":
+    - "UnityMain"
+  "3-6":
+    - "Thread-*"
+    - "UnityChoreograp"
+    - "mgp.speedmobile"
+  "3-4":
+    - "Job.Worker*"
+  "3-5":
+    - "NativeThread"
+
+# 跑跑卡丁车
+cent.tmgp.WePop:
+  "7":
+    - "UnityMain"
+  "3-6":
+    - "Thread-*"
+    - "UnityChoreograp"
+  "3-4":
+    - "Job.Worker*"
+  "3-5":
+    - "NativeThread"
+
+# 第五人格
+com.netease.dwrg:
+  "3-7":
+    - "Thread-*"
+  "3-6":
+    - "NativeThread"
+  "0-2":
+    - "*"
+
+# 第五人格（OPPO渠道服）
+com.netease.dwrg.nearme.gamecenter:
+  "3-7":
+    - "Thread-*"
+  "3-6":
+    - "NativeThread"
+  "0-2":
+    - "*"
+
+# 原神
+com.miHoYo.Yuanshen:
+  "6-7":
+    - "UnityMain"
+    - "UnityGfxDeviceW"
+    - "UnityMultiRende"
+  "3-5":
+    - "Thread-*"
+    - "UnityPreload"
+  "6":
+    - "NativeThread"
+  "0-5":
+    - "*"
+
+# 三角洲行动
+com.tencent.tmgp.dfm:
+  "7":
+    - "GameThread"
+  "3-7":
+    - "RenderThread"
+  "3-5":
+    - "FAsyncLoading"
+    - "MainThread-UE4"
+    - "Thread-*"
+  "3-4":
+    - "TaskGraphNP*"
+
+# 暗区突围
+com.tencent.mf.uam:
+  "7":
+    - "GameThread"
+    - "Thread-*"
+  "3-5":
+    - "RHIThread"
+    - "RenderThread*"
+  "5-6":
+    - "TaskGraphHP*"
+    - "NativeThread"
+
+# 战双帕弥什
+com.kurogame.haru.hero:
+  "7":
+    - "UnityMain"
+  "3-5":
+    - "UnityGfxDeviceW"
+    - "UnityChoreograp"
+  "3-6":
+    - "Job.Worker*"
+    - "Thread*"
+  "5-6":
+    - "CRI Server Mana"
+
+# 王牌战争4399渠道服
+com.yingxiong.hero.f399:
+  "7":
+    - "UnityMain"
+  "3-5":
+    - "UnityGfxDeviceW"
+  "3-6":
+    - "Job.Worker*"
+    - "Thread-*"
+  "5-6":
+    - "xiong.hero.f399"
+
+# 火影忍者
+com.tencent.KiHan:
+  "7":
+    - "UnityMain"
+    - "Thread-85"
+    - "Thread-113"
+  "3-6":
+    - "UnityGfxDeviceW"
+    - "RenderThread"
+    - "Thread-122"
+  "0-5":
+    - "NDK MediaCodec_"
+    - "UnityChoreograp"
+    - "Job.Worker 2"
+    - "Thread-127"
+    - "Loading.Preload"
+    - "Background Job."
+    - "m.tencent.KiHan"
+    - "FMOD mixer thre"
+  "0-4":
+    - "*"
+
+# 初音未来：缤纷舞台
+com.hermes.mk:
+  "5,7":
+    - "UnityMain*"
+  "5-6":
+    - "UnityGfx*"
+  "3-4":
+    - "Job.Worker*"
+    - "GPM-DataThread"
+  "0-3":
+    - "Thread-*"
+  "0-2":
+    - "Audio*"
+    - "CRI*"
+  "0-4":
+    - "*"
+
+# 枪破黎明
+com.hykb.qplm:
+  "7":
+    - "UnityMain"
+  "3-6":
+    - "UnityGfxDeviceW"
+    - "GLThread*"
+    - "com.hykb.qplm"
+  "3-5":
+    - "Job.Worker*"
+  "3-4":
+    - "UnityChoreograp"
+  "0-1,3-6":
+    - "*"
+
+# --- 软件 ---
+
+# Clash内核
+Clash.Core:
+  "5":
+    - "*"
+
+# coloros桌面
+com.android.launcher:
+  "7":
+    - "RenderThread"
+    - "ndroid.launcher"
+  "3-6":
+    - "hwuiTask*"
+    - "binder:*"
+  "3":
+    - "WallpaperTransa"
+  "0-6":
+    - "*"
+
+# miui桌面
+com.miui.home:
+  "7":
+    - "RenderThread"
+  "3-7":
+    - "FolderAnimation"
+  "6-7":
+    - "com.miui.home"
+  "3-6":
+    - "RecentTask"
+    - "*Anim*"
+    - "*Background*"
+    - "binder:*"
+  "0-4":
+    - "HeapTask*"
+  "0-6":
+    - "*"
+
+# miui相机
+com.android.camera:
+  "7":
+    - "CameraRender*"
+    - ".android.camera"
+  "5-6":
+    - "RenderThread"
+    - "MediaCodec_loop*"
+  "3":
+    - "ExternalGLThrea"
+  "0-4":
+    - "HeapTaskDaemon"
+  "3-7":
+    - "ASDScheduler"
+    - "*Codec*"
+    - "*Anim*"
+  "3-6":
+    - "SDKScheduler*"
+    - "binder:*"
+  "6":
+    - "CameraSetup"
+  "5":
+    - "PreviewRenderEn"
+  "0-7":
+    - "*"
+
+# oneplus 相机
+com.oplus.camera:
+  "7":
+    - "om.oplus.camera"
+  "3-7":
+    - "RenderThread"
+  "3-6":
+    - "Camera*"
+    - "CapThread_*"
+    - "binder:*"
+  "5-6":
+    - "PreviewProcessT"
+  "0-6":
+    - "*"
+
+# 酷安
+com.coolapk.market:
+  "7":
+    - "RenderThread*"
+  "0-3":
+    - "binder*"
+  "4-6":
+    - "Thread-*"
+  "0-7":
+    - "Audio*"
+  "0-6":
+    - "*"
+
+# PiliPlus (一个示例或特定应用)
+com.example.piliplus:
+  "7":
+    - "1.raster"
+    - "1.ui"
+  "4-6":
+    - "io.worker.*"
+    - "MediaCodec*"
+    - "binder:*"
+  "6":
+    - "xample.piliplus"
+  "3-6":
+    - "Thread-*"
+    - "mpv*"
+    - "*"
+  "3":
+    - "CodecLooper"
+  "5":
+    - "DartWorker"
+
+# 网易云音乐
+com.netease.cloudmusic:
+  "3-7":
+    - "RenderThread"
+  "0-6":
+    - "*"
+
+# QQ音乐
+com.tencent.qqmusic:
+  "6":
+    - "RenderThread"
+  "3-4":
+    - "tencent.qqmusic"
+  "5":
+    - "mali-event-hand"
+  "0-3":
+    - "binder:*"
+    - "*"
+
+# 抖音
+com.ss.android.ugc.aweme:
+  "6-7":
+    - "main"
+  "3-6":
+    - "hwui*"
+    - "looper_monitor"
+    - "ChromiumNet*"
+    - "HwBinder:*"
+    - "ttmp-idle"
+    - "AOutle*"
+    - "Playe*"
+    - "Thread-*"
+    - "MediaCodec_loop"
+  "7":
+    - "RenderThread"
+    - "TeaThread"
+  "0-3":
+    - "binder:*"
+  "3-4":
+    - "VOutle*"
+  "5-6":
+    - "droid.ugc.aweme"
+    - "VDecod2-*"
+  "3-5":
+    - "Audio*"
+  "0-1,5-6":
+    - "TRThread_*"
+  "0-4":
+    - "*"
+
+# 抖音 小游戏/小程序
+"com.ss.android.ugc.aweme:minigame0":
+  "0-5":
+    - "*"
+"com.ss.android.ugc.aweme:miniappX":
+  "3-6":
+    - "*"
+
+# 抖音极速版
+com.ss.android.ugc.aweme.lite:
+  "6":
+    - "RenderThread"
+  "5-6":
+    - "ugc.aweme.lite"
+    - "looper_monitor"
+  "3-6":
+    - "Video*"
+    - "Playe2-V*"
+    - "VDecod2-*"
+    - "*-V10"
+    - "main"
+    - "HwBinder:*"
+    - "TTNet-*"
+    - "mars::*"
+    - "DNSThread"
+    - "CodecLooper"
+  "3-4":
+    - "Animax_GPU"
+  "0-2":
+    - "*Alog*"
+    - "*Idle*"
+    - "keva-*"
+    - "binder:*"
+  "1,5":
+    - "*Daemon"
+  "0-3":
+    - "*Reaper"
+    - "VOutle2-*"
+    - "*"
+  "0-2,5":
+    - "MediaCodec_loop"
+
+# 抖音极速版 push服务
+"com.ss.android.ugc.aweme.lite:push":
+  "0-2":
+    - "*"
+
+# 皮皮虾
+com.sup.android.superb:
+  "7":
+    - "RenderThread"
+  "3-7":
+    - "VDecode*"
+  "3-6":
+    - "*superb*"
+  "0-6":
+    - "*"
+
+# 闲鱼
+com.taobao.idlefish:
+  "7":
+    - "RenderThread"
+  "5-7":
+    - "1.ui"
+  "3-6":
+    - "taobao.idlefish"
+    - "1.raster"
+  "3-4":
+    - "DartWorker"
+  "0-6":
+    - "*"
+
+# 淘宝
+com.taobao.taobao:
+  "5-7":
+    - "RenderThread"
+  "7":
+    - "m.taobao.taobao"
+  "6":
+    - "WeexJSBridgeTh"
+  "3-6":
+    - "HeapTaskDaemon"
+    - "NativeThread"
+    - "*"
+  "5-6":
+    - "8RYPVI8EZKhJUU"
+  "0-2":
+    - "Jit thread pool"
+    - "OneNativehread"
+    - ".os.AsyncTask$4"
+
+# 微信
+com.tencent.mm:
+  "5":
+    - "com.tencent.mm"
+  "3-6":
+    - "default_matrix_"
+    - "*"
+  "0-6":
+    - "binder:*"
+
+# 微信 push服务
+"com.tencent.mm:push":
+  "0-2":
+    - "*"
+
+# QQ
+com.tencent.mobileqq:
+  "3-6":
+    - "RenderThread*"
+    - "Thread-*"
+  "4-7":
+    - "binder*"
+  "0-7":
+    - "Audio*"
+  "0-5":
+    - "*"
+
+# TIM
+com.tencent.tim:
+  "7":
+    - "RenderThread"
+  "3-6":
+    - "mali-event-hand"
+  "0-5":
+    - "*"
+
+# Nagram X
+nu.gpu.nagram:
+  "7":
+    - "RenderThread"
+    - "storageQueue"
+  "3-7":
+    - "nu.gpu.nagram"
+  "4-6":
+    - "binder:*"
+  "3-5":
+    - "Thread-*"
+  "0-6":
+    - "*"
+
+# 哔哩哔哩
+tv.danmaku.bili:
+  "7":
+    - "RenderThread"
+    - "MediaCodec_loop"
+  "3-6":
+    - "CRON.*"
+    - "binder:*"
+    - "OkHttp*"
+    - "HwBinder:*"
+  "3-7":
+    - "ijk*"
+  "0-6":
+    - "*"
+
+# 哔哩哔哩 相关服务
+"tv.danmaku.bili:pushservice":
+  "0-2":
+    - "*"
+"tv.danmaku.bili:web":
+  "3-6":
+    - "*"
+"tv.danmaku.bili:ijkservice":
+  "3-6":
+    - "*"
+
+# 哔哩哔哩play版/国际版
+com.bilibili.app.in:
+  "5-6":
+    - "RenderThread"
+  "6":
+    - "tv.danmaku.bili"
+    - "bilibili.app.in"
+  "3-7":
+    - "Thread-*"
+  "3-6":
+    - "ModDownloadFact"
+  "5":
+    - "CRON.Main"
+  "0-1,3-4":
+    - "ijk_ext_render"
+  "0-4":
+    - "*"
+
+# 小红书
+com.xingin.xhs:
+  "7":
+    - "RenderThread"
+    - "com.xingin.xhs"
+  "3-5":
+    - "Thread-*"
+  "3-6":
+    - "xy_pool_*"
+    - "FrescoDecodeExe"
+    - "LongMsgDispatch"
+  "0-2":
+    - "binder:*"
+  "4":
+    - "fHandlerThread"
+  "6":
+    - "videodec_live_p"
+  "4-7":
+    - "xylog_thread_po"
+  "5":
+    - "ChromiumNet"
+  "3":
+    - "HeapTaskDaemon"
+  "0-6":
+    - "videodec_*"
+  "0-5":
+    - "*"
+
+# 高德地图
+com.autonavi.minimap:
+  "4":
+    - "AJXBizCheck"
+  "7":
+    - "JavaScriptThrea"
+  "5":
+    - "Map-Logical-0"
+  "3-6":
+    - "utonavi.minimap"
+  "0-6":
+    - "*"
+
+# 支付宝
+com.eg.android.AlipayGphone:
+  "6-7":
+    - "crv-worker-thre"
+  "3-6":
+    - "id.AlipayGphone"
+    - "binder:*"
+    - "*.mdn.alip"
+    - "HeapTaskDaemon"
+  "7":
+    - "RenderThread"
+  "0-6":
+    - "*"
+
+# 椒盐音乐
+com.salt.music:
+  "3-7":
+    - "RenderThread"
+    - "FileObserver"
+    - "HeapTaskDaemon"
+    - "com.salt.music"
+  "3-6":
+    - "binder:*"
+    - "DefaultExecutor"
+    - "DefaultDispatch"
+    - "glide-source-th"
+    - "Thread-*"
+  "0-6":
+    - "*"
+
+# 今日头条
+com.ss.android.article.news:
+  "7":
+    - "platform-single"
+  "6":
+    - "id.article.news"
+  "3-6":
+    - "RenderThread"
+    - "MediaCodec_*"
+  "0-6":
+    - "*"
+
+# 百度地图
+com.baidu.BaiduMap:
+  "7":
+    - "31.1_0223536945"
+  "6":
+    - ".31.1_062565145"
+  "3-6":
+    - ".baidu.BaiduMap"
+  "3-5":
+    - "RenderThread"
+  "0-6":
+    - "*"
+
+# 拼多多
+com.xunmeng.pinduoduo:
+  "7":
+    - "Startup#RTDispa"
+  "6":
+    - "Chat#Single-Syn"
+  "0-6":
+    - "nmeng.pinduoduo"
+    - "*"
+  "3-6":
+    - "RenderThread"
+  "3-5":
+    - "Jit thread pool"
+
+# 微博
+com.sina.weibo:
+  "7":
+    - "com.sina.weibo"
+  "5":
+    - "RenderThread"
+  "3-6":
+    - "Thread-*"
+  "0-6":
+    - "*"
+
+# 微博轻享版
+com.weico.international:
+  "7":
+    - "RenderThread"
+  "3-7":
+    - "o.international"
+  "3-6":
+    - "glide-source-th"
+    - "*"
+  "3-4":
+    - "binder:*"
+
+# 快手
+com.smile.gifmaker:
+  "7":
+    - ".smile.gifmaker"
+  "3-6":
+    - "mqt_*"
+    - "ksp2p::*"
+  "6":
+    - "RenderThread"
+  "5":
+    - "HeapTaskDaemon"
+  "4-6":
+    - "V8 DefaultWorke"
+  "0-5":
+    - "MediaCodec_*"
+  "0-6":
+    - "*"
+
+# 快手 相关服务
+"com.smile.gifmaker:push_v3":
+  "0-2":
+    - "*"
+"com.smile.gifmaker:mini0":
+  "0-4":
+    - "*"
+"com.smile.gifmaker:commonMiniService":
+  "0-5":
+    - "*"
+
+# 快手极速版
+com.kuaishou.nebula:
+  "3-6":
+    - "RenderThread"
+    - "k-kmp*"
+    - "mdl*"
+    - "HeapTaskDaemon"
+  "3-7":
+    - "ChromiumNet_0"
+  "4-5":
+    - "mali*"
+  "0-3":
+    - "ffmpeg-*"
+  "0-5":
+    - "ged-swd"
+  "0-6":
+    - "*"
+
+# 企业微信
+com.tencent.wework:
+  "7":
+    - ".tencent.wework"
+  "5-6":
+    - "RenderThread"
+  "3-4":
+    - "DefaultDispa"
+  "3-6":
+    - "Chrome_*"
+    - "NetworkService"
+  "0-3":
+    - "binder:*"
+  "5":
+    - "VizWebView"
+  "0-6":
+    - "*"
+
+# 贴吧
+com.baidu.tieba:
+  "7":
+    - "com.baidu.tieba"
+  "3-6":
+    - "RenderThread"
+  "0-6":
+    - "*"
+
+# 美团
+com.sankuai.meituan:
+  "3-7":
+    - "RenderThread"
+    - "*"
+  "3-6":
+    - "msc_js"
+    - "HeapTaskDaemon"
+    - "mqt*"
+  "0-6":
+    - "Chrome*"
+    - "J*"
+
+# 饿了么
+me.ele:
+  "3-6":
+    - "me.ele"
+    - "RenderThread"
+    - "ODCP*"
+    - "LWalle*"
+    - "ReferenceQueueD"
+  "7":
+    - "HeapTaskDaemon"
+  "0-6":
+    - "*"
+
+# 得物
+com.shizhuang.duapp:
+  "7":
+    - "RenderThread"
+  "5-6":
+    - "shizhuang.duapp"
+  "0-6":
+    - "*"
+
+# 番茄免费小说
+com.dragon.read:
+  "0-1":
+    - "APM6*"
+  "0-2":
+    - "Rende*"
+  "0-2,7":
+    - "*"
+
+# 虎牙直播
+com.duowan.kiwi:
+  "7":
+    - "hy net"
+  "3-6":
+    - "hy transport-"
+  "5-6":
+    - "Renderthread"
+  "4-6":
+    - "KT_KLogcatThred"
+  "0-6":
+    - "*"
+
+# 虎牙直播play版
+com.huya.kiwi:
+  "5-7":
+    - "Renderthread"
+  "3-6":
+    - "MediaCodec_loop"
+  "5-6":
+    - "GLThread*"
+  "6,7":
+    - "HYMHardVideoRen"
+  "3-4":
+    - "com.huya.kiwi"
+    - "Thread-*"
+  "0-3":
+    - "*"
+
+# Telegram
+org.telegram.messenger:
+  "6":
+    - "RenderThread"
+  "5":
+    - "egram.messenger"
+  "5-6":
+    - "ExoPlayer:*"
+  "3":
+    - "mali-event-hand"
+  "0-2":
+    - "*"
+
+# 爱奇艺
+com.qiyi.video:
+  "6":
+    - "PLAYER_INFLATE_"
+  "5":
+    - "RenderThread"
+  "5-6":
+    - "DanmakuGLThread"
+    - "mali-event-hand"
+  "3-4":
+    - "com.qiyi.video"
+    - "PumaPlyrVEgn"
+  "3-6":
+    - "*"
+
+# 腾讯视频
+com.tencent.qqlive:
+  "5-6":
+    - "Thread-*"
+    - "mali-event-hand"
+  "3-4":
+    - "o266Child"
+  "5":
+    - ".tencent.qqlive"
+    - "TVKDL-UdpLayer"
+  "6":
+    - "TVKDL-Timer"
+    - "RenderThread"
+  "0-3":
+    - "*"
+
+# 钉钉
+com.alibaba.android.rimet:
+  "5-6":
+    - "RenderThread"
+  "3-6":
+    - "a.android.rimet"
+  "3-4":
+    - "mali-event-hand"
+  "0-3":
+    - "*"
+
+# 酷我音乐
+cn.kuwo.player:
+  "5,7":
+    - "RenderThread"
+  "5-6":
+    - "cn.kuwo.player"
+  "3-4":
+    - "mali-event-hand"
+  "0-4":
+    - "*"
+
+# 酷狗音乐
+com.kugou.android:
+  "6-7":
+    - "RenderThread"
+  "5-6":
+    - "mali-event-hand"
+  "3-6":
+    - "m.kugou.android"
+  "0-4":
+    - "*"
+
+# 剪映
+com.lemon.lv:
+  "7":
+    - "VE-AsyncQueue-0"
+  "3-6":
+    - "VE-GLGraph-0x75"
+    - "GLThread"
+    - "FFmpeg*"
+    - "Exporter"
+  "5-7":
+    - "com.lemon.lv"
+  "3-7":
+    - "MediaCodec_loop"
+    - "TEMessageThread"
+    - "HwBinder:26311_"
+    - "RenderThread"
+    - "VE-glGlobalQueu"
+    - "VE-driveQueue-0"
+    - "MediaCodec*"
+  "0-2":
+    - "Network*"
+  "3-4":
+    - "HeapTask*"
+  "0-4":
+    - "Binder:*"
+  "5-6":
+    - "Audio*"
+  "0-5":
+    - "*"
+
+# 剪映 导出服务
+"com.lemon.lv:export":
+  "3-7":
+    - "*"
+
+# 抖音商城
+com.ss.android.ugc.livelite:
+  "6-7":
+    - "tp-default*"
+  "7":
+    - "single-live-pla"
+    - "HeapTask*"
+  "3-6":
+    - "LogReaper"
+    - "gecko-*"
+    - "Executors*"
+    - "Jit thread*"
+    - "Lynx_JS"
+    - "Thread-"
+    - "Chromium*"
+    - "Render*"
+    - "id.ugc*"
+    - "VDecod2*"
+  "0-6":
+    - "*"
+
+# 抖音商城 tp服务
+"com.ss.android.ugc.livelite:#tp-*":
+  "3-7":
+    - "*"
+
+# 红果免费短剧
+com.phoenix.read:
+  "7":
+    - "background_thre"
+  "3-7":
+    - "om.phoenix.read"
+    - "Lynx*"
+  "3-6":
+    - "RenderThread"
+    - "ChromiumNet0"
+    - "report_event_th"
+    - "Thread-*"
+    - "Async*"
+    - "VOutle2-*"
+    - "dr-load-plugin-"
+    - "MediaCodec_loop"
+  "5-6":
+    - "HeapTaskDaemon"
+    - "DownloadThreadP"
+    - "TRThread_0"
+  "3-4":
+    - "Jit thread pool"
+    - "ThreadPoolUtils"
+  "0-4":
+    - "LogReaper"
+    - "*"
+  "0-2":
+    - "ActionReaper"
+  "3-6":
+    - "gecko-update-th"
+  "5-7":
+    - "RxCachedThreadS"
+  "3-6":
+    - "AsyncTask*"
+
+# DeepSeek
+com.deepseek.chat:
+  "5-6":
+    - "m.deepseek.chat"
+  "6":
+    - "RenderThread"
+  "3":
+    - "HeapTaskDaemon"
+  "0-4":
+    - "mali-event-hand"
+    - "DefaultDispatch*"
+  "0-2,5-6":
+    - "binder:*"
+  "4":
+    - "RecyclerView"
+  "5":
+    - "ImageLoader"
+  "0-2,4":
+    - "MsgSync"
+  "0-2,6":
+    - "NetworkIO"
+  "7":
+    - "AIChatProcessor"
+  "0-6":
+    - "*"
+
+# Via浏览器
+mark.via:
+  "3-6":
+    - "RenderThread"
+    - "AudioTrack*"
+    - "VizWebView"
+    - "GPU completion"
+    - "VideoCapture*"
+    - "MediaCodec*"
+  "0-2,5-6":
+    - "Chrome_*"
+    - "HeapTask*"
+  "0-4":
+    - "Network*"
+    - "RxCachedThread*"
+  "0-2":
+    - "Binder:*"
+  "0-6":
+    - "*"
+
+# MT管理器
+bin.mt.plus:
+  "3-6":
+    - "RenderThread"
+    - "mali-*"
+    - "HeapTask*"
+    - "Binder:*"
+    - "GPU completion"
+    - "Custom-Looper"
+    - "7zDecode"
+  "0-4":
+    - "pool-*-thread*"
+    - "*"
+  "0-2":
+    - "Jit*"
+  "3-7":
+    - "ZipEngine"
+
+# 懂车帝
+com.ss.android.auto:
+  "7":
+    - "VideoDecode"
+  "5-6":
+    - "SpecCompare"
+  "0-2":
+    - "AdPreload"
+  "0-5":
+    - "*"
+
+# Keep
+com.gotokeep.keep:
+  "5-6":
+    - "SensorCalc"
+  "6":
+    - "LessonRender"
+  "0-2":
+    - "StepCounter"
+
+# 菜鸟
+com.cainiao.wireless:
+  "5":
+    - "MapTrack"
+  "7":
+    - "QRScan"
+  "0-2":
+    - "SyncService"
+
+# 小米相册
+com.miui.gallery:
+  "3-7":
+    - "RenderThread"
+  "3-4":
+    - "glide-*"
+  "3-6":
+    - "mali-*"
+    - "AsyncTask*"
+    - "Heap*"
+  "0-2":
+    - "Binder:*"
+  "0-6":
+    - "*"
+
+# 小米音乐
+com.miui.player:
+  "7":
+    - "DBHelper"
+  "3-6":
+    - "MediaSession"
+    - "NetworkIO"
+    - "Visualization"
+    - "EqualizerService"
+    - "Binder:*"
+  "5-7":
+    - "NotificationSync"
+  "3-7":
+    - "DownloadWorker"
+  "0-2":
+    - "AudioDecoder"
+    - "*"
