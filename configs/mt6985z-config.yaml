@@ -5,9 +5,9 @@ meta:
   configVersion: 15
   loglevel: "INFO"
 
-# 主要功能开关
+# 主要功能开关 
 function:
-  DisableQcomGpu: true
+  DisableQcomGpu: false
   AffintySetter: true
   CpuIdleScaling_Governor: false
   EasScheduler: true
@@ -23,16 +23,16 @@ Standby:
   Enable: false
   ScreenOffDelay: 300
 
-# 核心分配设置
+# 核心分配设置 (与MT6985相同)
 CoreAllocation:
-  cpusetCore: "3-7"
+  cpusetCore: "4-7"
   cpuctlUclampBoostMin: "0"
   cpuctlUclampBoostMax: "100"
 
-# 核心框架路径
+# 核心框架路径 (与MT6985相同: 4小核, 3中核, 1大核)
 CoreFramework:
   SmallCorePath: 0
-  MediumCorePath: 3
+  MediumCorePath: 4
   BigCorePath: 7
   SuperBigCorePath: 0
 
@@ -56,7 +56,7 @@ EasSchedulerValue:
 CpuIdle:
   current_governor: ""
 
-# Cpuset 分组
+# Cpuset 分组 (与MT6985相同)
 Cpuset:
   top_app: "0-7"
   foreground: "0-7"
@@ -64,7 +64,7 @@ Cpuset:
   system_background: "1-2"
   background: "0-2"
 
-# --- 性能模式 ---
+# --- 性能模式 (频率针对MT6985Z进行上调) ---
 
 # 省电模式
 powersave:
@@ -76,19 +76,19 @@ powersave:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 500
-  SmallCoreMaxFreq: 1300
-  MediumCoreMinFreq: 600
-  MediumCoreMaxFreq: 1350
-  BigCoreMinFreq: 600
-  BigCoreMaxFreq: 1500
+  SmallCoreMinFreq: 220
+  SmallCoreMaxFreq: 1500     
+  MediumCoreMinFreq: 400
+  MediumCoreMaxFreq: 1900     
+  BigCoreMinFreq: 1200
+  BigCoreMaxFreq: 2200      
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
 
 # 均衡模式
 balance:
-  scaling_governor: "walt"
+  scaling_governor: "schedutil"
   UclampTopAppMin: "0"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "0"
@@ -96,12 +96,12 @@ balance:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 600
-  SmallCoreMaxFreq: 1600
-  MediumCoreMinFreq: 700
-  MediumCoreMaxFreq: 1800
-  BigCoreMinFreq: 800
-  BigCoreMaxFreq: 2000
+  SmallCoreMinFreq: 800
+  SmallCoreMaxFreq: 2000      
+  MediumCoreMinFreq: 1200
+  MediumCoreMaxFreq: 2600    
+  BigCoreMinFreq: 1500
+  BigCoreMaxFreq: 2800      
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: 2300
   ufsClkGate: false
@@ -116,19 +116,19 @@ performance:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 900
-  SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: 900
-  MediumCoreMaxFreq: 2200
-  BigCoreMinFreq: 1100
-  BigCoreMaxFreq: 2500
+  SmallCoreMinFreq: 1000
+  SmallCoreMaxFreq: 2000    
+  MediumCoreMinFreq: 1600
+  MediumCoreMaxFreq: 3000    
+  BigCoreMinFreq: 1800
+  BigCoreMaxFreq: 3350    
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: 0
   ufsClkGate: false
 
 # 极速模式
 fast:
-  scaling_governor: "walt"
+  scaling_governor: "schedutil" 
   UclampTopAppMin: "10"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "1"
@@ -136,11 +136,11 @@ fast:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 900
+  SmallCoreMinFreq: 1200      
   SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: 900
+  MediumCoreMinFreq: 1800     
   MediumCoreMaxFreq: "max"
-  BigCoreMinFreq: 1100
+  BigCoreMinFreq: 2000      
   BigCoreMaxFreq: "max"
   SuperBigCoreMinFreq: "max"
   SuperBigCoreMaxFreq: "max"

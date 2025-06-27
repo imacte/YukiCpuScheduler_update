@@ -25,20 +25,20 @@ Standby:
 
 # 核心分配设置
 CoreAllocation:
-  cpusetCore: "3-7"
+  cpusetCore: "4-7"
   cpuctlUclampBoostMin: "0"
   cpuctlUclampBoostMax: "100"
 
 # 核心框架路径
 CoreFramework:
   SmallCorePath: 0
-  MediumCorePath: 3
+  MediumCorePath: 4
   BigCorePath: 7
   SuperBigCorePath: 0
 
 # IO 调度器设置
 IO_Settings:
-  Scheduler: "bfq"
+  Scheduler: ""
   IO_optimization: true
 
 # 其他设置
@@ -68,7 +68,7 @@ Cpuset:
 
 # 省电模式
 powersave:
-  scaling_governor: "conservative"
+  scaling_governor: "schedutil"
   UclampTopAppMin: "0"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "0"

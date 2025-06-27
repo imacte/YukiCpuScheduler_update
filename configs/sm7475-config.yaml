@@ -38,7 +38,7 @@ CoreFramework:
 
 # IO 调度器设置
 IO_Settings:
-  Scheduler: "bfq"
+  Scheduler: ""
   IO_optimization: true
 
 # 其他设置
@@ -68,7 +68,7 @@ Cpuset:
 
 # 省电模式
 powersave:
-  scaling_governor: "conservative"
+  scaling_governor: "schedutil"
   UclampTopAppMin: "0"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "0"

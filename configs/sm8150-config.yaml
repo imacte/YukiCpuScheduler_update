@@ -23,18 +23,18 @@ Standby:
   Enable: false
   ScreenOffDelay: 300
 
-# 核心分配设置
+# 核心分配设置 (SM8150: 4小核 + 3中核 + 1大核)
 CoreAllocation:
-  cpusetCore: "3-7"
+  cpusetCore: "4-7"
   cpuctlUclampBoostMin: "0"
   cpuctlUclampBoostMax: "100"
 
-# 核心框架路径
+# 核心框架路径 (SM8150: CPU0-3 小核, CPU4-6 中核, CPU7 大核)
 CoreFramework:
-  SmallCorePath: 0
-  MediumCorePath: 3
-  BigCorePath: 7
-  SuperBigCorePath: 0
+  SmallCorePath: 0     
+  MediumCorePath: 4    
+  BigCorePath: 7       
+  SuperBigCorePath: 0  
 
 # IO 调度器设置
 IO_Settings:
@@ -56,17 +56,17 @@ EasSchedulerValue:
 CpuIdle:
   current_governor: ""
 
-# Cpuset 分组
+# Cpuset 分组 (针对SM8150优化)
 Cpuset:
   top_app: "0-7"
   foreground: "0-7"
-  restricted: "0-5"
-  system_background: "1-2"
-  background: "0-2"
+  restricted: "0-5"          
+  system_background: "0-3"    
+  background: "0-3"          
 
 # --- 性能模式 ---
 
-# 省电模式
+# 省电模式 (SM8150)
 powersave:
   scaling_governor: "schedutil"
   UclampTopAppMin: "0"
@@ -77,18 +77,18 @@ powersave:
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
   SmallCoreMinFreq: 500
-  SmallCoreMaxFreq: 1300
-  MediumCoreMinFreq: 600
-  MediumCoreMaxFreq: 1350
-  BigCoreMinFreq: 600
-  BigCoreMaxFreq: 1500
-  SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: "min"
+  SmallCoreMaxFreq: 1200    
+  MediumCoreMinFreq: 700
+  MediumCoreMaxFreq: 1400    
+  BigCoreMinFreq: 800
+  BigCoreMaxFreq: 1500     
+  SuperBigCoreMinFreq: "min"  
+  SuperBigCoreMaxFreq: "min"  
   ufsClkGate: false
 
-# 均衡模式
+# 均衡模式 (SM8150)
 balance:
-  scaling_governor: "walt"
+  scaling_governor: "schedutil"
   UclampTopAppMin: "0"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "0"
@@ -96,17 +96,17 @@ balance:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 600
-  SmallCoreMaxFreq: 1600
-  MediumCoreMinFreq: 700
-  MediumCoreMaxFreq: 1800
-  BigCoreMinFreq: 800
-  BigCoreMaxFreq: 2000
+  SmallCoreMinFreq: 650
+  SmallCoreMaxFreq: 1785      
+  MediumCoreMinFreq: 800
+  MediumCoreMaxFreq: 2420     
+  BigCoreMinFreq: 900
+  BigCoreMaxFreq: 2840      
   SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: 2300
+  SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
 
-# 性能模式
+# 性能模式 (SM8150)
 performance:
   scaling_governor: "schedutil"
   UclampTopAppMin: "0"
@@ -118,17 +118,17 @@ performance:
   UclampBackGroundMax: "50"
   SmallCoreMinFreq: 900
   SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: 900
-  MediumCoreMaxFreq: 2200
-  BigCoreMinFreq: 1100
-  BigCoreMaxFreq: 2500
+  MediumCoreMinFreq: 1200
+  MediumCoreMaxFreq: "max"
+  BigCoreMinFreq: 1500
+  BigCoreMaxFreq: "max"
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: 0
   ufsClkGate: false
 
-# 极速模式
+# 极速模式 (SM8150)
 fast:
-  scaling_governor: "walt"
+  scaling_governor: "performance" 
   UclampTopAppMin: "10"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "1"
@@ -136,11 +136,11 @@ fast:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 900
+  SmallCoreMinFreq: "max"
   SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: 900
+  MediumCoreMinFreq: "max"
   MediumCoreMaxFreq: "max"
-  BigCoreMinFreq: 1100
+  BigCoreMinFreq: "max"
   BigCoreMaxFreq: "max"
   SuperBigCoreMinFreq: "max"
   SuperBigCoreMaxFreq: "max"
