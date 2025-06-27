@@ -7,33 +7,26 @@ meta:
 
 # 主要功能开关
 function:
-  DisableQcomGpu: false 
+  DisableQcomGpu: false
   AffintySetter: true
   CpuIdleScaling_Governor: false
   EasScheduler: true
   cpuset: true
   LoadBalancing: true
-  EnableFeas: false
+  EnableFeas: false 
   AdjIOScheduler: true
   AppLaunchBoost: true
   EnableThreadAffinity: true
 
-# 待机模式配置
-Standby:
-  Enable: false
-  ScreenOffDelay: 300
-
-# 核心分配设置 (适配天玑6080)
+# 核心分配设置 (1+3+4架构)
 CoreAllocation:
-  cpusetCore: "4-7"
-  cpuctlUclampBoostMin: "0"
-  cpuctlUclampBoostMax: "100"
+  cpusetCore: "4-7" 
 
-# 核心框架路径 (适配天玑6080的 6小核+2大核 架构)
+# 核心框架路径 (适配天玑9000的 4小核+3大核+1超大核 架构)
 CoreFramework:
-  SmallCorePath: 0       
-  MediumCorePath: 0     
-  BigCorePath: 6        
+  SmallCorePath: 0      
+  MediumCorePath: 4     
+  BigCorePath: 7         
   SuperBigCorePath: 0   
 
 # IO 调度器设置
@@ -56,15 +49,15 @@ EasSchedulerValue:
 CpuIdle:
   current_governor: ""
 
-# Cpuset 分组 (适配天玑6080的 6+2 架构)
+# Cpuset 分组
 Cpuset:
   top_app: "0-7"
   foreground: "0-7"
-  restricted: "0-5"             
-  system_background: "0-3"     
-  background: "0-5"             
+  restricted: "0-5"
+  system_background: "1-2"
+  background: "0-2"
 
-# --- 性能模式  ---
+# --- 性能模式 ---
 
 # 省电模式
 powersave:
@@ -76,19 +69,19 @@ powersave:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 500
-  SmallCoreMaxFreq: 1200    
-  MediumCoreMinFreq: "min"      
-  MediumCoreMaxFreq: "min"     
-  BigCoreMinFreq: 600
-  BigCoreMaxFreq: 1400      
+  SmallCoreMinFreq: 220
+  SmallCoreMaxFreq: 1300
+  MediumCoreMinFreq: 400  
+  MediumCoreMaxFreq: 1700
+  BigCoreMinFreq: 1200
+  BigCoreMaxFreq: 1900
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
 
 # 均衡模式
 balance:
-  scaling_governor: "schedutil" 
+  scaling_governor: "schedutil"
   UclampTopAppMin: "0"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "0"
@@ -96,14 +89,14 @@ balance:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 600
-  SmallCoreMaxFreq: 1800     
-  MediumCoreMinFreq: "min"      
-  MediumCoreMaxFreq: "min"      
-  BigCoreMinFreq: 800
-  BigCoreMaxFreq: 2000      
-  SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: "min"
+  SmallCoreMinFreq: 800
+  SmallCoreMaxFreq: 1800
+  MediumCoreMinFreq: 1200
+  MediumCoreMaxFreq: 2200
+  BigCoreMinFreq: 1500
+  BigCoreMaxFreq: 2500
+  SuperBigCoreMinFreq: "min" 
+  SuperBigCoreMaxFreq: "min" 
   ufsClkGate: false
 
 # 性能模式
@@ -116,19 +109,19 @@ performance:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 800
-  SmallCoreMaxFreq: 2000      
-  MediumCoreMinFreq: "min"      
-  MediumCoreMaxFreq: "min"      
-  BigCoreMinFreq: 1000
-  BigCoreMaxFreq: 2400      
-  SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: "min"
+  SmallCoreMinFreq: 1000
+  SmallCoreMaxFreq: 2000
+  MediumCoreMinFreq: 1600
+  MediumCoreMaxFreq: 2850
+  BigCoreMinFreq: 1800
+  BigCoreMaxFreq: 3200
+  SuperBigCoreMinFreq: "min" 
+  SuperBigCoreMaxFreq: "min" 
   ufsClkGate: false
 
 # 极速模式
 fast:
-  scaling_governor: "performance" 
+  scaling_governor: "schedutil" 
   UclampTopAppMin: "10"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "1"
@@ -138,10 +131,10 @@ fast:
   UclampBackGroundMax: "50"
   SmallCoreMinFreq: 1200
   SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: "min"
-  MediumCoreMaxFreq: "min"
-  BigCoreMinFreq: 1200
+  MediumCoreMinFreq: 1600
+  MediumCoreMaxFreq: "max"
+  BigCoreMinFreq: 1800
   BigCoreMaxFreq: "max"
-  SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: "min"
+  SuperBigCoreMinFreq: "min" 
+  SuperBigCoreMaxFreq: "min" 
   ufsClkGate: true
