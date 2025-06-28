@@ -88,7 +88,7 @@ powersave:
 
 # 均衡模式
 balance:
-  scaling_governor: "walt"
+  scaling_governor: "schedutil"
   UclampTopAppMin: "0"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "0"
@@ -128,7 +128,7 @@ performance:
 
 # 极速模式
 fast:
-  scaling_governor: "walt"
+  scaling_governor: "schedutil"
   UclampTopAppMin: "10"
   UclampTopAppMax: "100"
   UclampTopApplatency_sensitive: "1"
