@@ -77,13 +77,13 @@ powersave:
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
   SmallCoreMinFreq: "min"
-  SmallCoreMaxFreq: 1500
+  SmallCoreMaxFreq: 1500000
   MediumCoreMinFreq: "min"
-  MediumCoreMaxFreq: 1800
+  MediumCoreMaxFreq: 1800000
   BigCoreMinFreq: "min"
-  BigCoreMaxFreq: 1700
+  BigCoreMaxFreq: 1700000
   SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: 1700
+  SuperBigCoreMaxFreq: 1700000
   ufsClkGate: false
 
 # 均衡模式
@@ -96,14 +96,14 @@ balance:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 600
-  SmallCoreMaxFreq: 1800
-  MediumCoreMinFreq: 800
-  MediumCoreMaxFreq: 2200
-  BigCoreMinFreq: 800
-  BigCoreMaxFreq: 2200
-  SuperBigCoreMinFreq: 1000
-  SuperBigCoreMaxFreq: 2300
+  SmallCoreMinFreq: 600000
+  SmallCoreMaxFreq: 1800000
+  MediumCoreMinFreq: 800000
+  MediumCoreMaxFreq: 2200000
+  BigCoreMinFreq: 800000
+  BigCoreMaxFreq: 2200000
+  SuperBigCoreMinFreq: 1000000
+  SuperBigCoreMaxFreq: 2300000
   ufsClkGate: false
 
 # 性能模式
@@ -116,14 +116,14 @@ performance:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 1500
-  SmallCoreMaxFreq: 2400
-  MediumCoreMinFreq: 1800
-  MediumCoreMaxFreq: 2600
-  BigCoreMinFreq: 1900
-  BigCoreMaxFreq: 2600
-  SuperBigCoreMinFreq: 2200
-  SuperBigCoreMaxFreq: 3200
+  SmallCoreMinFreq: 1500000
+  SmallCoreMaxFreq: 2400000
+  MediumCoreMinFreq: 1800000
+  MediumCoreMaxFreq: 2600000
+  BigCoreMinFreq: 1900000
+  BigCoreMaxFreq: 2600000
+  SuperBigCoreMinFreq: 2200000
+  SuperBigCoreMaxFreq: 3200000
   ufsClkGate: true
 
 # 极速模式
@@ -136,12 +136,12 @@ fast:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 1500
+  SmallCoreMinFreq: 1500000
   SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: 1800
+  MediumCoreMinFreq: 1800000
   MediumCoreMaxFreq: "max"
-  BigCoreMinFreq: 1900
+  BigCoreMinFreq: 1900000
   BigCoreMaxFreq: "max"
-  SuperBigCoreMinFreq: 2200
+  SuperBigCoreMinFreq: 2200000
   SuperBigCoreMaxFreq: "max"
   ufsClkGate: true

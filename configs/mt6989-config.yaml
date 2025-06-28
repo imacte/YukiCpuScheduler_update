@@ -34,7 +34,7 @@ CoreFramework:
   SmallCorePath: 0
   MediumCorePath: 4
   BigCorePath: 7
-  SuperBigCorePath: 0
+  SuperBigCorePath: -1
 
 # IO 调度器设置
 IO_Settings:
@@ -76,12 +76,12 @@ powersave:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 300
-  SmallCoreMaxFreq: 900
-  MediumCoreMinFreq: 500
-  MediumCoreMaxFreq: 1400
-  BigCoreMinFreq: 700
-  BigCoreMaxFreq: 1600
+  SmallCoreMinFreq: 300000
+  SmallCoreMaxFreq: 900000
+  MediumCoreMinFreq: 500000
+  MediumCoreMaxFreq: 1400000
+  BigCoreMinFreq: 700000
+  BigCoreMaxFreq: 1600000
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
@@ -96,14 +96,14 @@ balance:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 700
-  SmallCoreMaxFreq: 1800
-  MediumCoreMinFreq: 1200
-  MediumCoreMaxFreq: 2200
-  BigCoreMinFreq: 1500
-  BigCoreMaxFreq: 2600
+  SmallCoreMinFreq: 700000
+  SmallCoreMaxFreq: 1800000
+  MediumCoreMinFreq: 1200000
+  MediumCoreMaxFreq: 2200000
+  BigCoreMinFreq: 1500000
+  BigCoreMaxFreq: 2600000
   SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: 2300
+  SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
 
 # 性能模式
@@ -116,12 +116,12 @@ performance:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 900
-  SmallCoreMaxFreq: 2000
-  MediumCoreMinFreq: 1600
-  MediumCoreMaxFreq: 2600
-  BigCoreMinFreq: 1800
-  BigCoreMaxFreq: 3000
+  SmallCoreMinFreq: 900000
+  SmallCoreMaxFreq: 2000000
+  MediumCoreMinFreq: 1600000
+  MediumCoreMaxFreq: 2600000
+  BigCoreMinFreq: 1800000
+  BigCoreMaxFreq: 3000000
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
@@ -136,11 +136,11 @@ fast:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 900
+  SmallCoreMinFreq: 900000
   SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: 1600
+  MediumCoreMinFreq: 1600000
   MediumCoreMaxFreq: "max"
-  BigCoreMinFreq: 1800
+  BigCoreMinFreq: 1800000
   BigCoreMaxFreq: "max"
   SuperBigCoreMinFreq: "max"
   SuperBigCoreMaxFreq: "max"

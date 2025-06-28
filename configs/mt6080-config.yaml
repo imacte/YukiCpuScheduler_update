@@ -32,9 +32,9 @@ CoreAllocation:
 # 核心框架路径 (适配天玑6080的 6小核+2大核 架构)
 CoreFramework:
   SmallCorePath: 0       
-  MediumCorePath: 0     
+  MediumCorePath: -1     
   BigCorePath: 6        
-  SuperBigCorePath: 0   
+  SuperBigCorePath: -1   
 
 # IO 调度器设置
 IO_Settings:
@@ -76,12 +76,12 @@ powersave:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 500
-  SmallCoreMaxFreq: 1200    
+  SmallCoreMinFreq: 500000
+  SmallCoreMaxFreq: 1200000   
   MediumCoreMinFreq: "min"      
   MediumCoreMaxFreq: "min"     
-  BigCoreMinFreq: 600
-  BigCoreMaxFreq: 1400      
+  BigCoreMinFreq: 600000
+  BigCoreMaxFreq: 1400000     
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
@@ -96,12 +96,12 @@ balance:
   UclampForeGroundMax: "70"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 600
-  SmallCoreMaxFreq: 1800     
+  SmallCoreMinFreq: 600000
+  SmallCoreMaxFreq: 1800000    
   MediumCoreMinFreq: "min"      
   MediumCoreMaxFreq: "min"      
-  BigCoreMinFreq: 800
-  BigCoreMaxFreq: 2000      
+  BigCoreMinFreq: 800000
+  BigCoreMaxFreq: 2000000     
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
@@ -116,12 +116,12 @@ performance:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 800
-  SmallCoreMaxFreq: 2000      
+  SmallCoreMinFreq: 800000
+  SmallCoreMaxFreq: 2000000      
   MediumCoreMinFreq: "min"      
   MediumCoreMaxFreq: "min"      
-  BigCoreMinFreq: 1000
-  BigCoreMaxFreq: 2400      
+  BigCoreMinFreq: 1000000
+  BigCoreMaxFreq: 2400000      
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"
   ufsClkGate: false
@@ -136,11 +136,11 @@ fast:
   UclampForeGroundMax: "80"
   UclampBackGroundMin: "0"
   UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 1200
+  SmallCoreMinFreq: 1200000
   SmallCoreMaxFreq: "max"
   MediumCoreMinFreq: "min"
   MediumCoreMaxFreq: "min"
-  BigCoreMinFreq: 1200
+  BigCoreMinFreq: 1200000
   BigCoreMaxFreq: "max"
   SuperBigCoreMinFreq: "min"
   SuperBigCoreMaxFreq: "min"

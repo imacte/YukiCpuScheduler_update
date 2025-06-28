@@ -1,91 +1,96 @@
-# 🚀 YukiCpuScheduler 版本更新
+# 🚀 YukiCpuScheduler vX.X 更新日志
 
-> ⚠️ **重要提示** > 更新配置文件不是看模块版本，而是看 [GitHub](https://github.com/imacte/YukiCpuScheduler_update) 或 [Gitee](https://gitee.com/imacte_ui/YukiCpuScheduler_update) 仓库 `configs` 和 `threads` 文件夹里的内容是否更新。如果更新，重新安装模块即可。
+> 💡 **小贴士**: 模块会自动为你匹配最佳的性能配置文件。想获得极致体验？可以随时在 `/data/adb/modules/YukiCpuScheduler/configs/` 目录下手动调整 `config.yaml` 和 `thread.yaml`。
 
-## 🔧 修复与优化
+---
 
-### ⚙️ 核心优化 (Core Optimizations)
-- **🚀 配置文件格式升级**：项目核心配置文件已从 `.ini` 格式全面升级为 `.yaml` 格式，带来了更强的结构化能力和可读性，便于用户理解和修改。
-- **🧵 线程调度代码重构**：完全重构了线程亲和性管理模块的代码，使其逻辑更清晰，性能更稳定，为未来的功能扩展打下坚实基础。
-- **📥 下载流程优化**：优化了配置文件的下载流程，提升了下载过程的稳定性和成功率。
+## ✨ 本次更新亮点
 
-### 📱 兼容性修复
-- **修复部分机型下载配置文件的问题**
-- **增强了对不同 Android 版本的设备兼容性**
-- **修复配置文件读取长度问题**
+### 🎯 **全新线程亲和性引擎 (New Thread Affinity Engine)**
+- **精准核心绑定**: 新增了强大的 `thread.yaml` 配置文件，现在你可以为特定应用中的特定线程（如游戏的渲染线程、工作线程）精确绑定到指定CPU核心！这能显著减少卡顿，提升高负载下的流畅度。
+- **完全可控**: 在 `config.yaml` 中新增 `EnableThreadAffinity` 开关，让你一键启用或禁用此功能，在极致性能和默认调度之间自由切换。
+- **代码完全重构**: 底层线程管理代码被完全重写，带来了前所未有的稳定性和响应速度，并为未来的高级功能（如动态绑定）奠定了基础。
 
-## ✨ 新增功能
+### ⚙️ **配置系统全面升级 (Total Configuration Revamp)**
+- **拥抱 YAML**: 所有 `.ini` 配置文件已光荣退役，全面升级为更强大、更直观的 `.yaml` 格式。编辑和理解配置从未如此简单。
+- **智能在线匹配**: 优化了安装时的在线配置文件匹配逻辑，现在能更智能、更快速地为你的设备匹配最佳的初始设置。修复了部分天玑（MediaTek）和特殊设备型号无法下载配置的问题。
 
-### 🎯 CPU 核心分配与控制
-- **开关式线程亲和性**：现在可以在 `config.yaml` 文件中通过 `EnableThreadAffinity: true/false` 选项，自由开启或关闭“特定线程核心分配”功能，默认开启。
-- **手动配置支持**：全新的 `threads.yaml` 文件允许用户为特定应用的特定线程手动分配 CPU 核心。
-- **灵活调节**：支持根据不同场景和应用，自定义精细化的核心使用策略。
+---
 
-## 📱 支持平台
+## 📋 更新详情
 
-### 🔥 骁龙系列 (Qualcomm Snapdragon)
+### ✨ 新增 (Added)
+- **[核心]** 新增 `thread.yaml` 文件，支持手动配置线程到核心的亲和性规则。
+- **[核心]** 在 `config.yaml` 中新增 `EnableThreadAffinity` 开关，用于控制线程绑定功能。
+- **[配置]** 新增了对天玑 9000/9000+/9200+/6080 和骁龙 855 的官方支持。
 
-| 处理器型号 | 主配置文件 (`-config.yaml`) | 线程配置文件 (`-thread.yaml`) |
+### 🚀 优化 (Optimized)
+- **[架构]** `config.ini` 全面升级为 `config.yaml`，提升可读性和扩展性。
+- **[性能]** 完全重构线程调度核心代码，运行更高效、更稳定。
+- **[网络]** 优化了安装脚本中的配置文件下载流程，提高了成功率和速度。
+- **[安装]** 增加了在安装时选择是否禁用厂商性能服务（如小米Joyose）的选项，将控制权交给用户。
+
+### 🔧 修复 (Fixed)
+- **[兼容性]** 彻底修复了部分天玑(MediaTek)设备因型号识别问题而无法下载配置文件的bug。
+- **[兼容性]** 修复了因配置文件过长可能导致的读取不完整问题。
+- **[安装]** 修复了在某些设备上按一次音量键会触发两次选择的bug。
+
+---
+
+## 📱 支持的设备平台
+
+我们为最新的主流芯片提供了开箱即用的优化配置。
+
+<details>
+<summary><b>🔥 点击展开骁龙 (Qualcomm Snapdragon) 支持列表</b></summary>
+
+| 处理器型号 | 主配置文件 | 线程配置文件 |
 |---|---|---|
 | 骁龙 8 Gen 3 (sm8650) | ✅ | ✅ |
 | 骁龙 8 Gen 2 (sm8550) | ✅ | ✅ |
-| 骁龙 8+ Gen 1 (sm8475) | ✅ | ❌ |
-| 骁龙 8 Gen 1 (sm8450) | ✅ | ❌ |
-| 骁龙 888 (sm8350) | ✅ | ❌ |
-| 骁龙 870 (sm8250-ac) | ✅ | ❌ |
-| 骁龙 855 (sm8150) | ✅ | ❌ |
-| 骁龙 7+ Gen 2 (sm7475) | ✅ | ❌ |
+| 骁龙 8+ Gen 1 (sm8475) | ✅ | ❌ (即将支持) |
+| 骁龙 8 Gen 1 (sm8450) | ✅ | ❌ (即将支持) |
+| 骁龙 888 (sm8350) | ✅ | ❌ (即将支持) |
+| 骁龙 870 (sm8250-ac) | ✅ | ❌ (即将支持) |
+| 骁龙 855 (sm8150) | ✅ | ❌ (即将支持) |
+| 骁龙 7+ Gen 2 (sm7475) | ✅ | ❌ (即将支持) |
 
-### 💎 天玑系列 (MediaTek Dimensity)
+</details>
 
-| 处理器型号 | 主配置文件 (`-config.yaml`) | 线程配置文件 (`-thread.yaml`) |
+<details>
+<summary><b>💎 点击展开天玑 (MediaTek Dimensity) 支持列表</b></summary>
+
+| 处理器型号 | 主配置文件 | 线程配置文件 |
 |---|---|---|
-| 天玑 6080 (mt6080) | ✅ | ❌ |
-| 天玑 8100 (mt6895) | ✅ | ❌ |
-| 天玑 9000 (mt6983) | ✅ | ❌ |
-| 天玑 9000+ (mt6983z) | ✅ | ❌ |
-| 天玑 9200 (mt6985) | ✅ | ❌ |
-| 天玑 9200+ (mt6985z) | ✅ | ❌ |
-| 天玑 9300 (mt6989) | ✅ | ❌ |
+| 天玑 9300 (mt6989) | ✅ | ❌ (即将支持) |
+| 天玑 9200+ (mt6985z) | ✅ | ❌ (即将支持) |
+| 天玑 9200 (mt6985) | ✅ | ❌ (即将支持) |
+| 天玑 9000+ (mt6983z) | ✅ | ❌ (即将支持) |
+| 天玑 9000 (mt6983) | ✅ | ❌ (即将支持) |
+| 天玑 8100 (mt6895) | ✅ | ❌ (即将支持) |
+| 天玑 6080 (mt6080) | ✅ | ❌ (即将支持) |
 
-## 📖 使用说明
+</details>
 
-### 🎯 核心分配配置
-想要了解如何配置 **CPU 核心分配功能**？
-
-**👉 [访问 GitHub 仓库获取详细配置教程](https://github.com/imacte/YukiCpuScheduler_update)**
-
-### 🔧 快速开始
-1. 下载最新版本的 Magisk 模块。
-2. 在 Magisk Manager 中安装。
-3. （可选）根据需求修改 `/data/adb/modules/YukiCpuScheduler/configs/` 目录下的 `config.yaml` 和 `threads.yaml` 文件。
-4. 重启手机，享受优化后的性能表现。
+> `❌` 表示该芯片暂未提供专属的 `thread.yaml` 文件，但你依然可以自己创建并使用该功能！
 
 ---
 
-## 📋 更新摘要
+## 📖 快速上手
 
-- ✅ **新增** 天玑9000、天玑9000+的配置文件
-- ✅ **新增** 天玑6080、天玑9200+、骁龙855的配置文件
-- ✅ **新增** `threads.yaml` 手动核心分配支持
-- ✅ **新增** `EnableThreadAffinity` 功能开关
-- ✅ **优化** 配置文件全面升级为 YAML 格式
-- ✅ **优化** 重构线程调度代码
-- ✅ **优化** 提升了调速器和下载流程的稳定性
-- ✅ **修复** 配置文件下载问题
-- ✅ **修复** 修复配置文件读取长度问题
+1.  在 Magisk Manager 中安装最新版本的模块。
+2.  在安装过程中，根据提示使用**音量键**选择你的下载源和云控策略。
+3.  重启手机，模块将自动生效。
+4.  想要极致自定义？请编辑 `/data/adb/modules/YukiCpuScheduler/configs/` 目录下的 `.yaml` 文件。
+
+**👉 [点击这里，查看详细的 `thread.yaml` 配置教程](https://github.com/imacte/YukiCpuScheduler_update)**
 
 ---
 
-**💡 专业提示**：为获得最佳性能表现，建议根据您的具体使用习惯和设备性能，来自定义 `config.yaml` 和 `threads.yaml` 配置文件。
-
----
-
-*🌟 **让您的设备性能调度更智能，体验更流畅！** ✨*
+*🌟 **让你的设备性能，由你掌控！** ✨*
 
 ## 🔗 相关链接
 
-- **GitHub 仓库**：https://github.com/imacte/YukiCpuScheduler_update
-- **Gitee 仓库**：https://gitee.com/imacte_ui/YukiCpuScheduler_update
-- **问题反馈**：[Issues](https://github.com/imacte/YukiCpuScheduler_update/issues)
-- **更新日志**：[Releases](https://github.com/imacte/YukiCpuScheduler_update/releases)
+- **GitHub 仓库**: [https://github.com/imacte/YukiCpuScheduler_update](https://github.com/imacte/YukiCpuScheduler_update)
+- **Gitee 仓库**: [https://gitee.com/imacte_ui/YukiCpuScheduler_update](https://gitee.com/imacte_ui/YukiCpuScheduler_update)
+- **问题反馈**: [GitHub Issues](https://github.com/imacte/YukiCpuScheduler_update/issues)

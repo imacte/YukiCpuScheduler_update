@@ -133,10 +133,10 @@ YukiCpuScheduler 在初始化阶段就已经关闭了大部分主流的用户态
 
 ```yaml
 meta:
-  name: "YukiCpuScheduler正式版模型"
+  name: "YukiCpuScheduler Profile"
   author: "yuki"
-  configVersion: 14
-  loglevel: "INFO"
+  configVersion: 15
+  loglevel: "INFO" # 可选值: DEBUG, INFO, WARNING, ERROR
 ```
 
 | 字段 | 类型 | 描述 |
@@ -150,16 +150,13 @@ meta:
 
 ```yaml
 function:
-  DisableQcomGpu: false
-  AffintySetter: true
-  CpuIdleScaling_Governor: false
-  EasScheduler: true
-  cpuset: true
-  LoadBalancing: true
-  EnableFeas: false
-  AdjIOScheduler: true
-  AppLaunchBoost: true
-  EnableThreadAffinity: true
+  DisableQcomGpu: true # 禁用高通 GPU Boost
+  AffintySetter: true  # 为系统关键进程进行静态绑核
+  EasScheduler: true     # 启用 EAS 调度器参数优化
+  cpuset: true           # 启用 Cpuset 功能
+  LoadBalancing: true    # 启用 CFS 负载均衡优化
+  AppLaunchBoost: true   # 启用 APP 启动加速
+  EnableThreadAffinity: true # 总开关：是否启用 thread.yaml 的特定线程绑定功能
 ```
 
 | 功能 | 类型 | 描述 |
@@ -291,10 +288,10 @@ UclampForeGroundMin = "0"
 UclampForeGroundMax = "80"
 UclampBackGroundMin = "0"
 UclampBackGroundMax = "50"
-SmallCoreMaxFreq = 10000
-MediumCoreMaxFreq = 2500
-BigCoreMaxFreq = 2700
-SuperBigCoreMaxFreq = 2700
+SmallCoreMaxFreq = 1000000
+MediumCoreMaxFreq = 2500000
+BigCoreMaxFreq = 2700000
+SuperBigCoreMaxFreq = 2700000
 ufsClkGate = false
 ```
 
@@ -305,10 +302,10 @@ ufsClkGate = false
 | `UclampTopApplatency_sensitive` | string | 延迟敏感性参数，告知调度器前台应用对延迟敏感 |
 | `UclampForeGroundMin/Max` | string | 前台 APP 可使用的 CPU 频率下限/上限 (0-100) |
 | `UclampBackGroundMin/Max` | string | 后台 APP 可使用的 CPU 频率下限/上限 (0-100) |
-| `SmallCoreMaxFreq` | int | 小核 CPU 最大频率 (0-10000) |
-| `MediumCoreMaxFreq` | int | 中核 CPU 最大频率 (0-10000) |
-| `BigCoreMaxFreq` | int | 大核 CPU 最大频率 (0-10000) |
-| `SuperBigCoreMaxFreq` | int | 超大核 CPU 最大频率 (0-10000) |
+| `SmallCoreMaxFreq` | int | 小核 CPU 最大频率 (0-max) |
+| `MediumCoreMaxFreq` | int | 中核 CPU 最大频率 (0-max) |
+| `BigCoreMaxFreq` | int | 大核 CPU 最大频率 (0-max) |
+| `SuperBigCoreMaxFreq` | int | 超大核 CPU 最大频率 (0-max) |
 | `ufsClkGate` | bool | UFS 时钟门设置 |
 
 ---
