@@ -364,6 +364,20 @@ com.tencent.tmgp.sgame:
     - "AILocalThread"
     - "Job.worker*"
 
+# --- QQ飞车 ---
+com.tencent.tmgp.speedmobile:
+  "2-3,5-6":
+    - "*"
+    - "Thread-*"
+    - "CoreThread"
+  "7":
+    - "Unity*"
+  "4":
+    - "UnityGfxDeviceW"
+  "2-3":
+    - "AILocalThread"
+    - "Job.worker*"
+
 # --- 英雄联盟 ---
 com.tencent.lolm:
   "2-3,5-6":
