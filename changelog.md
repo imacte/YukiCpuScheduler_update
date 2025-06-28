@@ -1,4 +1,4 @@
-# 🚀 YukiCpuScheduler vX.X 更新日志
+# 🚀 YukiCpuScheduler v2.0.6 更新日志
 
 > 💡 **小贴士**: 模块会自动为你匹配最佳的性能配置文件。想获得极致体验？可以随时在 `/data/adb/modules/YukiCpuScheduler/configs/` 目录下手动调整 `config.yaml` 和 `thread.yaml`。
 
