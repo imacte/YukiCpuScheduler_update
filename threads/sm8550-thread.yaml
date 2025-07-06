@@ -489,7 +489,6 @@ com.tencent.mm:
   "5":
     - "com.tencent.mm"
   "3-6":
-    - "default_matrix_"
     - "*"
   "0-6":
     - "binder:*"

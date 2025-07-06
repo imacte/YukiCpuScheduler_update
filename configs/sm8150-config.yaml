@@ -2,7 +2,7 @@
 meta:
   name: "YukiCpuScheduler"
   author: "yuki"
-  configVersion: 15
+  configVersion: 16
   loglevel: "INFO"
 
 # 主要功能开关
@@ -15,7 +15,7 @@ function:
   LoadBalancing: true
   EnableFeas: false
   AdjIOScheduler: true
-  AppLaunchBoost: true
+  AppLaunchBoost: false
   EnableThreadAffinity: true
 
 # 待机模式配置
@@ -68,80 +68,128 @@ Cpuset:
 
 # 省电模式 (SM8150)
 powersave:
-  scaling_governor: "schedutil"
-  UclampTopAppMin: "0"
-  UclampTopAppMax: "100"
-  UclampTopApplatency_sensitive: "0"
-  UclampForeGroundMin: "0"
-  UclampForeGroundMax: "70"
-  UclampBackGroundMin: "0"
-  UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 500000
-  SmallCoreMaxFreq: 1200000  
-  MediumCoreMinFreq: 700000
-  MediumCoreMaxFreq: 1400000   
-  BigCoreMinFreq: 800000
-  BigCoreMaxFreq: 1500000    
-  SuperBigCoreMinFreq: "min"  
-  SuperBigCoreMaxFreq: "min"  
-  ufsClkGate: false
+  # 调速器
+  Governor:
+    global: "schedutil"
+    SmallCore: ""
+    MediumCore: ""
+    BigCore: ""
+    SuperBigCore: ""
+  # 频率
+  Freq:
+    SmallCoreMinFreq: 500000
+    SmallCoreMaxFreq: 1200000  
+    MediumCoreMinFreq: 700000
+    MediumCoreMaxFreq: 1400000   
+    BigCoreMinFreq: 800000
+    BigCoreMaxFreq: 1500000    
+    SuperBigCoreMinFreq: 0
+    SuperBigCoreMaxFreq: 0   
+  # 频率限制
+  Uclamp:
+    UclampTopAppMin: "0"
+    UclampTopAppMax: "100"
+    UclampTopApplatency_sensitive: "0"
+    UclampForeGroundMin: "0"
+    UclampForeGroundMax: "70"
+    UclampBackGroundMin: "0"
+    UclampBackGroundMax: "50"
+  # 其他设置
+  Other:
+    ufsClkGate: false
 
 # 均衡模式 (SM8150)
 balance:
-  scaling_governor: "schedutil"
-  UclampTopAppMin: "0"
-  UclampTopAppMax: "100"
-  UclampTopApplatency_sensitive: "0"
-  UclampForeGroundMin: "0"
-  UclampForeGroundMax: "70"
-  UclampBackGroundMin: "0"
-  UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 650000
-  SmallCoreMaxFreq: 1785000      
-  MediumCoreMinFreq: 800000
-  MediumCoreMaxFreq: 2420000     
-  BigCoreMinFreq: 900000
-  BigCoreMaxFreq: 2840000      
-  SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: "min"
-  ufsClkGate: false
+  # 调速器
+  Governor:
+    global: "schedutil"
+    SmallCore: ""
+    MediumCore: ""
+    BigCore: ""
+    SuperBigCore: ""
+  # 频率
+  Freq:
+    SmallCoreMinFreq: 650000
+    SmallCoreMaxFreq: 1785000      
+    MediumCoreMinFreq: 800000
+    MediumCoreMaxFreq: 2420000     
+    BigCoreMinFreq: 900000
+    BigCoreMaxFreq: 2840000      
+    SuperBigCoreMinFreq: 0
+    SuperBigCoreMaxFreq: 0 
+  # 频率限制
+  Uclamp:
+    UclampTopAppMin: "0"
+    UclampTopAppMax: "100"
+    UclampTopApplatency_sensitive: "0"
+    UclampForeGroundMin: "0"
+    UclampForeGroundMax: "70"
+    UclampBackGroundMin: "0"
+    UclampBackGroundMax: "50"
+  # 其他设置
+  Other:
+    ufsClkGate: false
 
 # 性能模式 (SM8150)
 performance:
-  scaling_governor: "schedutil"
-  UclampTopAppMin: "0"
-  UclampTopAppMax: "100"
-  UclampTopApplatency_sensitive: "1"
-  UclampForeGroundMin: "0"
-  UclampForeGroundMax: "80"
-  UclampBackGroundMin: "0"
-  UclampBackGroundMax: "50"
-  SmallCoreMinFreq: 900000
-  SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: 1200000
-  MediumCoreMaxFreq: "max"
-  BigCoreMinFreq: 1500000
-  BigCoreMaxFreq: "max"
-  SuperBigCoreMinFreq: "min"
-  SuperBigCoreMaxFreq: "min"
-  ufsClkGate: false
+  # 调速器
+  Governor:
+    global: "schedutil"
+    SmallCore: ""
+    MediumCore: ""
+    BigCore: ""
+    SuperBigCore: ""
+  # 频率
+  Freq:
+    SmallCoreMinFreq: 900000
+    SmallCoreMaxFreq: "max"
+    MediumCoreMinFreq: 1200000
+    MediumCoreMaxFreq: "max"
+    BigCoreMinFreq: 1500000
+    BigCoreMaxFreq: "max"
+    SuperBigCoreMinFreq: 0
+    SuperBigCoreMaxFreq: 0 
+  # 频率限制
+  Uclamp:
+    UclampTopAppMin: "0"
+    UclampTopAppMax: "100"
+    UclampTopApplatency_sensitive: "1"
+    UclampForeGroundMin: "0"
+    UclampForeGroundMax: "80"
+    UclampBackGroundMin: "0"
+    UclampBackGroundMax: "50"
+  # 其他设置
+  Other:
+    ufsClkGate: false
 
 # 极速模式 (SM8150)
 fast:
-  scaling_governor: "performance" 
-  UclampTopAppMin: "10"
-  UclampTopAppMax: "100"
-  UclampTopApplatency_sensitive: "1"
-  UclampForeGroundMin: "0"
-  UclampForeGroundMax: "80"
-  UclampBackGroundMin: "0"
-  UclampBackGroundMax: "50"
-  SmallCoreMinFreq: "max"
-  SmallCoreMaxFreq: "max"
-  MediumCoreMinFreq: "max"
-  MediumCoreMaxFreq: "max"
-  BigCoreMinFreq: "max"
-  BigCoreMaxFreq: "max"
-  SuperBigCoreMinFreq: "max"
-  SuperBigCoreMaxFreq: "max"
-  ufsClkGate: true
+  # 调速器
+  Governor:
+    global: "performance"
+    SmallCore: ""
+    MediumCore: ""
+    BigCore: ""
+    SuperBigCore: ""
+  # 频率
+  Freq:
+    SmallCoreMinFreq: "max"
+    SmallCoreMaxFreq: "max"
+    MediumCoreMinFreq: "max"
+    MediumCoreMaxFreq: "max"
+    BigCoreMinFreq: "max"
+    BigCoreMaxFreq: "max"
+    SuperBigCoreMinFreq: 0
+    SuperBigCoreMaxFreq: 0
+  # 频率限制
+  Uclamp:
+    UclampTopAppMin: "10"
+    UclampTopAppMax: "100"
+    UclampTopApplatency_sensitive: "1"
+    UclampForeGroundMin: "0"
+    UclampForeGroundMax: "80"
+    UclampBackGroundMin: "0"
+    UclampBackGroundMax: "50"
+  # 其他设置
+  Other:
+    ufsClkGate: true

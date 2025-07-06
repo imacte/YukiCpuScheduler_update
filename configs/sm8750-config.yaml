@@ -1,13 +1,13 @@
 # 元数据信息
 meta:
-  name: "YukiCpuScheduler"
+  name: "骁龙8至尊"
   author: "yuki"
   configVersion: 16
   loglevel: "INFO"
 
 # 主要功能开关
 function:
-  DisableQcomGpu: false
+  DisableQcomGpu: true
   AffintySetter: true
   CpuIdleScaling_Governor: false
   EasScheduler: true
@@ -18,32 +18,27 @@ function:
   AppLaunchBoost: false
   EnableThreadAffinity: true
 
-# 待机模式配置
-Standby:
-  Enable: false
-  ScreenOffDelay: 300
-
 # 核心分配设置
 CoreAllocation:
-  cpusetCore: "4-7"
+  cpusetCore: "0-7"
   cpuctlUclampBoostMin: "0"
   cpuctlUclampBoostMax: "100"
 
 # 核心框架路径
 CoreFramework:
-  SmallCorePath: 0
-  MediumCorePath: 4
-  BigCorePath: 7
+  SmallCorePath: -1
+  MediumCorePath: 0
+  BigCorePath: 6
   SuperBigCorePath: -1
 
 # IO 调度器设置
 IO_Settings:
-  Scheduler: ""
+  Scheduler: "mq-deadline"
   IO_optimization: true
 
 # 其他设置
 Other:
-  AdjQcomBus_dcvs: false
+  AdjQcomBus_dcvs: true
 
 # EAS 调度器参数
 EasSchedulerValue:
@@ -54,15 +49,15 @@ EasSchedulerValue:
 
 # CPU 空闲设置
 CpuIdle:
-  current_governor: ""
+  current_governor: "qcom-cpu-lpm"
 
 # Cpuset 分组
 Cpuset:
   top_app: "0-7"
   foreground: "0-7"
   restricted: "0-5"
-  system_background: "1-2"
-  background: "0-2"
+  system_background: "0-3"
+  background: "0-3"
 
 # --- 性能模式 ---
 
@@ -70,115 +65,83 @@ Cpuset:
 powersave:
   # 调速器
   Governor:
-    global: "schedutil"
+    global: "walt"
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
     SuperBigCore: ""
   # 频率
   Freq:
-    SmallCoreMinFreq: 220000
-    SmallCoreMaxFreq: 1400000
-    MediumCoreMinFreq: 400000
-    MediumCoreMaxFreq: 1800000
-    BigCoreMinFreq: 1200000
-    BigCoreMaxFreq: 2000000
+    SmallCoreMinFreq: 0
+    SmallCoreMaxFreq: 0
+    MediumCoreMinFreq: 0
+    MediumCoreMaxFreq: 1996
+    BigCoreMinFreq: 0
+    BigCoreMaxFreq: 1401
     SuperBigCoreMinFreq: 0
-    SuperBigCoreMaxFreq: 0 
+    SuperBigCoreMaxFreq: 0
   # 频率限制
   Uclamp:
-    UclampTopAppMin: "0"
+    UclampTopAppMin: "5"
     UclampTopAppMax: "100"
-    UclampTopApplatency_sensitive: "0"
+    UclampTopApplatency_sensitive: "1"
     UclampForeGroundMin: "0"
-    UclampForeGroundMax: "70"
+    UclampForeGroundMax: "55"
     UclampBackGroundMin: "0"
-    UclampBackGroundMax: "50"
+    UclampBackGroundMax: "40"
   # 其他设置
   Other:
-    ufsClkGate: false
+    ufsClkGate: true
 
 # 均衡模式
 balance:
   # 调速器
   Governor:
-    global: "schedutil"
+    global: "walt"
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
     SuperBigCore: ""
   # 频率
   Freq:
-    SmallCoreMinFreq: 800000
-    SmallCoreMaxFreq: 1800000
-    MediumCoreMinFreq: 1200000
-    MediumCoreMaxFreq: 2400000
-    BigCoreMinFreq: 1500000
-    BigCoreMaxFreq: 2600000
+    SmallCoreMinFreq: 0
+    SmallCoreMaxFreq: 0
+    MediumCoreMinFreq: 0
+    MediumCoreMaxFreq: 2400
+    BigCoreMinFreq: 0
+    BigCoreMaxFreq: 2841
     SuperBigCoreMinFreq: 0
-    SuperBigCoreMaxFreq: 0 
+    SuperBigCoreMaxFreq: 0
   # 频率限制
   Uclamp:
-    UclampTopAppMin: "0"
+    UclampTopAppMin: "7"
     UclampTopAppMax: "100"
-    UclampTopApplatency_sensitive: "0"
+    UclampTopApplatency_sensitive: "1"
     UclampForeGroundMin: "0"
-    UclampForeGroundMax: "70"
+    UclampForeGroundMax: "65"
     UclampBackGroundMin: "0"
-    UclampBackGroundMax: "50"
+    UclampBackGroundMax: "45"
   # 其他设置
   Other:
-    ufsClkGate: false
+    ufsClkGate: true
 
 # 性能模式
 performance:
   # 调速器
   Governor:
-    global: "schedutil"
+    global: "walt"
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
     SuperBigCore: ""
   # 频率
   Freq:
-    SmallCoreMinFreq: 1000000
-    SmallCoreMaxFreq: 2000000
-    MediumCoreMinFreq: 1600000
-    MediumCoreMaxFreq: 2850000
-    BigCoreMinFreq: 1800000
-    BigCoreMaxFreq: 3350000
-    SuperBigCoreMinFreq: 0
-    SuperBigCoreMaxFreq: 0 
-  # 频率限制
-  Uclamp:
-    UclampTopAppMin: "0"
-    UclampTopAppMax: "100"
-    UclampTopApplatency_sensitive: "1"
-    UclampForeGroundMin: "0"
-    UclampForeGroundMax: "80"
-    UclampBackGroundMin: "0"
-    UclampBackGroundMax: "50"
-  # 其他设置
-  Other:
-    ufsClkGate: false
-
-# 极速模式
-fast:
-  # 调速器
-  Governor:
-    global: "schedutil"
-    SmallCore: ""
-    MediumCore: ""
-    BigCore: ""
-    SuperBigCore: ""
-  # 频率
-  Freq:
-    SmallCoreMinFreq: 1000000
-    SmallCoreMaxFreq: "max"
-    MediumCoreMinFreq: 1600000
-    MediumCoreMaxFreq: "max"
-    BigCoreMinFreq: 1800000
-    BigCoreMaxFreq: "max"
+    SmallCoreMinFreq: 0
+    SmallCoreMaxFreq: 0
+    MediumCoreMinFreq: 0
+    MediumCoreMaxFreq: 2745
+    BigCoreMinFreq: 0
+    BigCoreMaxFreq: 3213
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
@@ -187,7 +150,39 @@ fast:
     UclampTopAppMax: "100"
     UclampTopApplatency_sensitive: "1"
     UclampForeGroundMin: "0"
-    UclampForeGroundMax: "80"
+    UclampForeGroundMax: "65"
+    UclampBackGroundMin: "0"
+    UclampBackGroundMax: "50"
+  # 其他设置
+  Other:
+    ufsClkGate: true
+
+# 极速模式
+fast:
+  # 调速器
+  Governor:
+    global: "walt"
+    SmallCore: ""
+    MediumCore: ""
+    BigCore: ""
+    SuperBigCore: ""
+  # 频率
+  Freq:
+    SmallCoreMinFreq: 0
+    SmallCoreMaxFreq: 0
+    MediumCoreMinFreq: 0
+    MediumCoreMaxFreq: 10000
+    BigCoreMinFreq: 0
+    BigCoreMaxFreq: 10000
+    SuperBigCoreMinFreq: 0
+    SuperBigCoreMaxFreq: 0
+  # 频率限制
+  Uclamp:
+    UclampTopAppMin: "10"
+    UclampTopAppMax: "100"
+    UclampTopApplatency_sensitive: "1"
+    UclampForeGroundMin: "0"
+    UclampForeGroundMax: "65"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
   # 其他设置

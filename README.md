@@ -20,7 +20,7 @@ YukiCpuScheduler 是一款基于 C++ 编写的智能 CPU 调度工具，专为�
 ## 🔧 系统要求
 
 - **架构支持**: ARM64 平台
-- **系统版本**: Android 8.0 - 15.0
+- **系统版本**: Android 9.0 - 15.0
 - **权限要求**: Root 权限 (Magisk)
 
 ## 🎯 情景模式
@@ -135,7 +135,7 @@ YukiCpuScheduler 在初始化阶段就已经关闭了大部分主流的用户态
 meta:
   name: "YukiCpuScheduler Profile"
   author: "yuki"
-  configVersion: 15
+  configVersion: 16
   loglevel: "INFO" # 可选值: DEBUG, INFO, WARNING, ERROR
 ```
 
@@ -190,7 +190,7 @@ CoreAllocation:
 
 ### 4️⃣ 核心架构参数 (CoreFramework)
 
-```ini
+```yaml
 [CoreFramework]
 SmallCorePath = 0
 MediumCorePath = 4
@@ -207,7 +207,7 @@ SuperBigCorePath = 0
 
 ### 5️⃣ I/O 设置 (IO_Settings)
 
-```ini
+```yaml
 [IO_Settings]
 Scheduler = ""
 IO_optimization = false
@@ -220,7 +220,7 @@ IO_optimization = false
 
 ### 6️⃣ QcomBus 参数优化 (Other)
 
-```ini
+```yaml
 [Other]
 AdjQcomBus_dcvs = false
 ```
@@ -231,7 +231,7 @@ AdjQcomBus_dcvs = false
 
 ### 7️⃣ EAS 调度器参数 (EasSchedulerVaule)
 
-```ini
+```yaml
 [EasSchedulerVaule]
 sched_min_granularity_ns = "2000000" 
 sched_nr_migrate = "30"
@@ -248,7 +248,7 @@ sched_schedstats = "0"
 
 ### 8️⃣ CPU Idle 调度器 (CpuIdle)
 
-```ini
+```yaml
 [CpuIdle]
 current_governor = ""
 ```
@@ -259,7 +259,7 @@ current_governor = ""
 
 ### 9️⃣ CPUSet 配置 (Cpuset)
 
-```ini
+```yaml
 [Cpuset]
 top_app = "0-7"
 foreground = "0-7"
@@ -278,21 +278,39 @@ background = "0-2"
 
 ### 🔟 功耗模型开发 (以 performance 模式为例)
 
-```ini
-[performance]
-scaling_governor = "schedutil"
-UclampTopAppMin = "0"
-UclampTopAppMax = "100"
-UclampTopApplatency_sensitive = "1"
-UclampForeGroundMin = "0"
-UclampForeGroundMax = "80"
-UclampBackGroundMin = "0"
-UclampBackGroundMax = "50"
-SmallCoreMaxFreq = 1000000
-MediumCoreMaxFreq = 2500000
-BigCoreMaxFreq = 2700000
-SuperBigCoreMaxFreq = 2700000
-ufsClkGate = false
+```yaml
+performance:
+  # 1. 调速器设置
+  Governor:
+    # 为所有核心簇设置一个全局默认的调速器
+    global: "schedutil"
+    # 你可以为特定核心簇独立设置调速器，优先级更高
+    big_core: "performance"
+    super_big_core: "performance"
+
+  # 2. 频率设置
+  Freq:
+    # 可以使用具体数值，也可以用 "max" 或 "min" 代表硬件最大/最低频率
+    small_core_max_freq: 2035200
+    medium_core_max_freq: 2803200
+    big_core_max_freq: "max"
+    super_big_core_max_freq: "max"
+
+  # 3. Uclamp (CPU 使用率限制) 设置
+  Uclamp:
+    top_app_min: "0"
+    top_app_max: "100"
+    foreground_min: "0"
+    foreground_max: "80"
+    background_min: "0"
+    background_max: "50"
+    # 是否告知调度器前台应用对延迟敏感
+    top_app_latency_sensitive: "1"
+
+  # 4. 其他设置
+  Other:
+    # UFS 时钟门
+    ufs_clk_gate: false
 ```
 
 | 字段 | 类型 | 描述 |
