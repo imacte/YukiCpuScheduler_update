@@ -75,9 +75,9 @@ powersave:
     SmallCoreMinFreq: 0
     SmallCoreMaxFreq: 0
     MediumCoreMinFreq: 0
-    MediumCoreMaxFreq: 1996
+    MediumCoreMaxFreq: 1996000
     BigCoreMinFreq: 0
-    BigCoreMaxFreq: 1401
+    BigCoreMaxFreq: 1401000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
@@ -107,9 +107,9 @@ balance:
     SmallCoreMinFreq: 0
     SmallCoreMaxFreq: 0
     MediumCoreMinFreq: 0
-    MediumCoreMaxFreq: 2400
+    MediumCoreMaxFreq: 2400000
     BigCoreMinFreq: 0
-    BigCoreMaxFreq: 2841
+    BigCoreMaxFreq: 2841000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
@@ -139,9 +139,9 @@ performance:
     SmallCoreMinFreq: 0
     SmallCoreMaxFreq: 0
     MediumCoreMinFreq: 0
-    MediumCoreMaxFreq: 2745
+    MediumCoreMaxFreq: 2745000
     BigCoreMinFreq: 0
-    BigCoreMaxFreq: 3213
+    BigCoreMaxFreq: 3213000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
@@ -171,9 +171,9 @@ fast:
     SmallCoreMinFreq: 0
     SmallCoreMaxFreq: 0
     MediumCoreMinFreq: 0
-    MediumCoreMaxFreq: 10000
+    MediumCoreMaxFreq: "max"
     BigCoreMinFreq: 0
-    BigCoreMaxFreq: 10000
+    BigCoreMaxFreq: "max"
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
