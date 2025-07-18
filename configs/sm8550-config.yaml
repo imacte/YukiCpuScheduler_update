@@ -15,37 +15,13 @@ function:
   LoadBalancing: true
   EnableFeas: false
   AdjIOScheduler: true  
-  AppLaunchBoost: false
+  AppLaunchBoost: true
   EnableThreadAffinity: true
 
-# 游戏帧率调谐器(测试阶段)
-FrameRateTuner:
-  enabled: false  # 设置为 true 来启用, false 禁用
-  # 要控制的CPU策略集群ID。通常小核集群或中核集群比较敏感。
-  # 0: 小核, 4: 中核, 7: 大核 (根据您的设备调整)
-  # 建议先从单个集群开始，比如中核集群。
-  cpu_policies:
-    - 3
-    - 7
-  # 当帧率低于此值时，暂停微调并恢复原始频率设置 (单位: FPS)
-  suspend_threshold_fps: 40
-  # 稳定帧时间的下限 (单位: 毫秒)。当帧时间低于此值，会尝试降频。
-  # 16.0ms 约等于 62.5 FPS
-  stable_frametime_min_ms: 16.0
-  # 稳定帧时间的上限 (单位: 毫秒)。当帧时间高于此值，会尝试提频。
-  # 17.2ms 约等于 58.1 FPS
-  stable_frametime_max_ms: 17.2
-  # 每次提频/降频的档位数
-  nudge_steps: 1
-  # 允许提频的最大档位数 (相对于原始最低频率)，用于功耗保护
-  max_freq_ceiling_steps: 10
-  # 调整频率时是否同时锁定min和max频率。这可以提供更稳定的频率表现。
-  lock_min_max_freq: true
-
-# 待机模式配置
-Standby:
-  Enable: false
-  ScreenOffDelay: 300
+# App启动加速设置
+AppLaunchBoostSettings:
+  FreqMulti: 1.2    # 频率提升倍率 (1.2 表示提升20%)
+  BoostRateMs: 200  # 持续时间 (毫秒)
 
 # 核心分配设置
 CoreAllocation:
