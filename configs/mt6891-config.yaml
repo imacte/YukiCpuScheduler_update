@@ -1,7 +1,7 @@
 # 元数据信息
 meta:
-  name: "YukiCpuScheduler"
-  author: "yuki"
+  name: "YukiCpuScheduler for MT6891"
+  author: "yuki (adapted for MT6891)"
   configVersion: 17
   loglevel: "INFO"
 
@@ -78,11 +78,11 @@ powersave:
   # 频率
   Freq:
     SmallCoreMinFreq: 500000
-    SmallCoreMaxFreq: 1400000
-    MediumCoreMinFreq: 600000
-    MediumCoreMaxFreq: 1500000
-    BigCoreMinFreq: 600000
-    BigCoreMaxFreq: 1600000
+    SmallCoreMaxFreq: 1250000
+    MediumCoreMinFreq: 437000
+    MediumCoreMaxFreq: 1335000
+    BigCoreMinFreq: 659000
+    BigCoreMaxFreq: 1482000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
@@ -102,19 +102,19 @@ powersave:
 balance:
   # 调速器
   Governor:
-    global: "schedutil"
+    global: "walt"
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
     SuperBigCore: ""
   # 频率
   Freq:
-    SmallCoreMinFreq: 600000
-    SmallCoreMaxFreq: 1500000
-    MediumCoreMinFreq: 700000
-    MediumCoreMaxFreq: 1800000
-    BigCoreMinFreq: 800000
-    BigCoreMaxFreq: 1800000
+    SmallCoreMinFreq: 500000
+    SmallCoreMaxFreq: 1800000
+    MediumCoreMinFreq: 437000
+    MediumCoreMaxFreq: 2200000
+    BigCoreMinFreq: 659000
+    BigCoreMaxFreq: 2292000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
@@ -142,11 +142,11 @@ performance:
   # 频率
   Freq:
     SmallCoreMinFreq: 1000000
-    SmallCoreMaxFreq: 1800000
-    MediumCoreMinFreq: 1000000
-    MediumCoreMaxFreq: 2200000
-    BigCoreMinFreq: 1100000
-    BigCoreMaxFreq: 2500000
+    SmallCoreMaxFreq: 2000000
+    MediumCoreMinFreq: 1046000
+    MediumCoreMaxFreq: 2600000
+    BigCoreMinFreq: 1108000
+    BigCoreMaxFreq: 2600000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
@@ -166,19 +166,19 @@ performance:
 fast:
   # 调速器
   Governor:
-    global: "schedutil"
+    global: "walt"
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
     SuperBigCore: ""
   # 频率
   Freq:
-    SmallCoreMinFreq: 1000000
-    SmallCoreMaxFreq: "max"
-    MediumCoreMinFreq: 1000000
-    MediumCoreMaxFreq: "max"
-    BigCoreMinFreq: 1100000
-    BigCoreMaxFreq: "max"
+    SmallCoreMinFreq: 2000000
+    SmallCoreMaxFreq: 2000000
+    MediumCoreMinFreq: 2600000
+    MediumCoreMaxFreq: 2600000
+    BigCoreMinFreq: 2600000
+    BigCoreMaxFreq: 2600000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
   # 频率限制
