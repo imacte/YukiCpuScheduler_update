@@ -102,7 +102,7 @@ powersave:
 balance:
   # 调速器
   Governor:
-    global: "walt"
+    global: "schedutil"
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
@@ -166,7 +166,7 @@ performance:
 fast:
   # 调速器
   Governor:
-    global: "walt"
+    global: "schedutil"
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
