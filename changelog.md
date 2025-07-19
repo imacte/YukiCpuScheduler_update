@@ -3,10 +3,13 @@
 > 💡 **小贴士**: 模块会自动为你匹配最佳的性能配置文件。想获得极致体验？可以随时在 `/data/adb/modules/YukiCpuScheduler/configs/` 目录下手动调整 `config.yaml` 和 `thread.yaml`。
 
 ## 📋 更新详情
+### 🚀  更新 (update)
+
+ - **[更新]**  使用busybox的wget代替curl下载配置文件，以防部分机型没有curl
+
 ### 🔧 修复 (Fixed)
 
-  - **[移除]**  类fas功能
-  - **[修复]** 应用启动加速功能
+  - **[修复]**  部分bug
 
 
 ## 🔗 相关链接
