@@ -2,7 +2,7 @@
 meta:
   name: "YukiCpuScheduler"
   author: "yuki"
-  configVersion: 18
+  configVersion: 19
   loglevel: "INFO"
 
 # 主要功能开关
@@ -16,7 +16,6 @@ function:
   EnableFeas: false 
   AdjIOScheduler: true
   AppLaunchBoost: true
-  EnableThreadAffinity: true
 
 # App启动加速设置
 AppLaunchBoostSettings:
@@ -68,6 +67,13 @@ Bus_dcvs_Path:
   CPUddrminPath: ""
   CPUddrmaxPath: ""
 
+#调速器参数（path可加） 
+pGovPath:
+  schedutil:
+    path1: ""
+    path2: ""
+    path3: ""
+
 # --- 性能模式 ---
 
 # 省电模式
@@ -104,6 +110,12 @@ powersave:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -142,6 +154,12 @@ balance:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -180,6 +198,12 @@ performance:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -218,6 +242,12 @@ fast:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: true

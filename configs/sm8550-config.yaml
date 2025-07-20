@@ -2,7 +2,7 @@
 meta:
   name: "骁龙8gen2"
   author: "yuki"
-  configVersion: 18
+  configVersion: 19
   loglevel: "INFO"
 
 # 主要功能开关
@@ -16,7 +16,6 @@ function:
   EnableFeas: false
   AdjIOScheduler: true  
   AppLaunchBoost: true
-  EnableThreadAffinity: true
 
 # App启动加速设置
 AppLaunchBoostSettings:
@@ -70,6 +69,16 @@ Bus_dcvs_Path:
   CPUddrminPath: ""
   CPUddrmaxPath: ""
 
+#调速器参数（path可加） 
+pGovPath:
+  schedutil:
+    path1: ""
+    path2: ""
+    path3: ""
+  walt:
+    path1: ""
+    path2: ""
+    path3: ""
 # --- 性能模式 ---
 
 # 省电模式
@@ -81,7 +90,6 @@ powersave:
     MediumCore: "" 
     BigCore: ""
     SuperBigCore: ""   
-
   # 频率
   Freq:
     SmallCoreMinFreq: 0
@@ -92,7 +100,6 @@ powersave:
     BigCoreMaxFreq: 1300000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
-
   # 频率限制
   Uclamp:
     UclampTopAppMin: "0"
@@ -108,11 +115,19 @@ powersave:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
+    walt:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: false
-
-
 
 # 均衡模式
 balance:
@@ -122,8 +137,7 @@ balance:
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
-    SuperBigCore: "" 
-  
+    SuperBigCore: ""  
   # 频率
   Freq:
     SmallCoreMinFreq: 672000
@@ -134,7 +148,6 @@ balance:
     BigCoreMaxFreq: 2300000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
-  
   # 频率限制
   Uclamp:
     UclampTopAppMin: "0"
@@ -150,6 +163,16 @@ balance:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
+    walt:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -162,8 +185,7 @@ performance:
     SmallCore: ""
     MediumCore: ""
     BigCore: ""
-    SuperBigCore: ""
-  
+    SuperBigCore: "" 
   # 频率
   Freq:
     SmallCoreMinFreq: 1010000
@@ -174,7 +196,6 @@ performance:
     BigCoreMaxFreq: 3000000
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
-  
   # 频率限制
   Uclamp:
     UclampTopAppMin: "0"
@@ -190,10 +211,19 @@ performance:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
+    walt:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: false
-
 
 # 极速模式
 fast:
@@ -204,7 +234,6 @@ fast:
     MediumCore: ""
     BigCore: ""
     SuperBigCore: ""
-  
   # 频率
   Freq:
     SmallCoreMinFreq: 1785000
@@ -215,7 +244,6 @@ fast:
     BigCoreMaxFreq: "max"
     SuperBigCoreMinFreq: 0
     SuperBigCoreMaxFreq: 0
-  
   # 频率限制
   Uclamp:
     UclampTopAppMin: "10"
@@ -231,6 +259,16 @@ fast:
     CPUllccmax: ""
     CPUddrmin: ""
     CPUddrmax: ""
+  #调速器参数值
+  Govsets:
+    schedutil:
+      path1: ""
+      path2: ""
+      path3: ""
+    walt:
+      path1: ""
+      path2: ""
+      path3: ""
   # 其他设置
   Other:
     ufsClkGate: true
