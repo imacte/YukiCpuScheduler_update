@@ -58,6 +58,12 @@ Cpuset:
   system_background: "1-2"
   background: "0-2"
 
+Bus_dcvs_Path:
+  CPUllccminPath: ""
+  CPUllccmaxPath: ""
+  CPUddrminPath: ""
+  CPUddrmaxPath: ""
+
 #调速器参数（path可加） 
 pGovPath:
   schedutil:
@@ -99,6 +105,12 @@ powersave:
     UclampForeGroundMax: "70"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   #调速器参数值
   Govsets:
     schedutil:
@@ -141,6 +153,12 @@ balance:
     UclampForeGroundMax: "70"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   #调速器参数值
   Govsets:
     schedutil:
@@ -183,6 +201,12 @@ performance:
     UclampForeGroundMax: "80"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"  
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   #调速器参数值
   Govsets:
     schedutil:
@@ -225,6 +249,12 @@ fast:
     UclampForeGroundMax: "80"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"  
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   #调速器参数值
   Govsets:
     schedutil:
