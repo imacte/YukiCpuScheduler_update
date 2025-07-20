@@ -75,11 +75,11 @@ pGovPath:
 powersave:
   # 调速器
   Governor: 
-    global: schedutil
-    SmallCore:  
-    MediumCore:  
-    BigCore:     
-    SuperBigCore:   
+    global: "schedutil"
+    SmallCore: ""
+    MediumCore: "" 
+    BigCore: ""
+    SuperBigCore: ""   
   # 频率
   Freq:
     SmallCoreMinFreq: "min"
@@ -117,11 +117,11 @@ powersave:
 balance:
   # 调速器
   Governor: 
-    global: walt
-    SmallCore: 
-    MediumCore: 
-    BigCore: 
-    SuperBigCore: 
+    global: "walt"
+    SmallCore: ""
+    MediumCore: "" 
+    BigCore: ""
+    SuperBigCore: ""   
   # 频率
   Freq:
     SmallCoreMinFreq: 600000
@@ -159,11 +159,11 @@ balance:
 performance:
   # 调速器
   Governor: 
-    global: schedutil
-    SmallCore: 
-    MediumCore: 
-    BigCore: 
-    SuperBigCore:   
+    global: "schedutil"
+    SmallCore: ""
+    MediumCore: "" 
+    BigCore: ""
+    SuperBigCore: ""   
   # 频率
   Freq:
     SmallCoreMinFreq: 1500000
@@ -201,11 +201,11 @@ performance:
 fast:
   # 调速器
   Governor: 
-    global: walt
-    SmallCore: 
-    MediumCore: 
-    BigCore: 
-    SuperBigCore:   
+    global: "walt"
+    SmallCore: ""
+    MediumCore: "" 
+    BigCore: ""
+    SuperBigCore: ""    
   # 频率
   Freq:
     SmallCoreMinFreq: 1500000
