@@ -2,7 +2,7 @@
 meta:
   name: "YukiCpuScheduler"
   author: "yuki"
-  configVersion: 17
+  configVersion: 18
   loglevel: "INFO"
 
 # 主要功能开关
@@ -65,6 +65,12 @@ Cpuset:
   system_background: "1-2"
   background: "0-2"
 
+Bus_dcvs_Path:
+  CPUllccminPath: ""
+  CPUllccmaxPath: ""
+  CPUddrminPath: ""
+  CPUddrmaxPath: ""
+
 # --- 性能模式 ---
 
 # 省电模式
@@ -95,6 +101,12 @@ powersave:
     UclampForeGroundMax: "70"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -127,6 +139,12 @@ balance:
     UclampForeGroundMax: "70"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -159,6 +177,12 @@ performance:
     UclampForeGroundMax: "80"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -191,6 +215,12 @@ fast:
     UclampForeGroundMax: "80"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   # 其他设置
   Other:
     ufsClkGate: true

@@ -2,7 +2,7 @@
 meta:
   name: "骁龙8至尊"
   author: "yuki"
-  configVersion: 17
+  configVersion: 18
   loglevel: "INFO"
 
 # 主要功能开关
@@ -64,6 +64,12 @@ Cpuset:
   system_background: "0-3"
   background: "0-3"
 
+Bus_dcvs_Path:
+  CPUllccminPath: ""
+  CPUllccmaxPath: ""
+  CPUddrminPath: ""
+  CPUddrmaxPath: ""
+
 # --- 性能模式 ---
 
 # 省电模式
@@ -94,6 +100,12 @@ powersave:
     UclampForeGroundMax: "55"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "40"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   # 其他设置
   Other:
     ufsClkGate: true
@@ -126,6 +138,12 @@ balance:
     UclampForeGroundMax: "65"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "45"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   # 其他设置
   Other:
     ufsClkGate: true
@@ -158,9 +176,16 @@ performance:
     UclampForeGroundMax: "65"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
   # 其他设置
   Other:
     ufsClkGate: true
+
 
 # 极速模式
 fast:
@@ -190,6 +215,14 @@ fast:
     UclampForeGroundMax: "65"
     UclampBackGroundMin: "0"
     UclampBackGroundMax: "50"
+  #总线频率
+  Bus_dcvs:
+    CPUllccmin: ""
+    CPUllccmax: ""
+    CPUddrmin: ""
+    CPUddrmax: ""
+
   # 其他设置
   Other:
     ufsClkGate: true
+
