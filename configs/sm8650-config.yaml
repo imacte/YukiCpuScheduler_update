@@ -8,7 +8,7 @@ meta:
 # 主要功能开关
 function:
   DisableQcomGpu: true
-  AffintySetter: true
+  AffinitySetter: true
   CpuIdleScaling_Governor: false
   EasScheduler: true
   cpuset: true
@@ -126,6 +126,7 @@ powersave:
       path1: ""
       path2: ""
       path3: ""
+
   # 其他设置
   Other:
     ufsClkGate: false
