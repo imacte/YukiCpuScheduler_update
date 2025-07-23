@@ -2,7 +2,7 @@
 meta:
   name: "YukiCpuScheduler"
   author: "yuki"
-  configVersion: 19
+  configVersion: 20
   loglevel: "INFO"
 
 # 主要功能开关
@@ -113,9 +113,21 @@ powersave:
   #调速器参数值
   Govsets:
     schedutil:
-      path1: ""
-      path2: ""
-      path3: ""
+      path1: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path2: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path3: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -157,9 +169,21 @@ balance:
   #调速器参数值
   Govsets:
     schedutil:
-      path1: ""
-      path2: ""
-      path3: ""
+      path1: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path2: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path3: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -201,9 +225,21 @@ performance:
   #调速器参数值
   Govsets:
     schedutil:
-      path1: ""
-      path2: ""
-      path3: ""
+      path1: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path2: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path3: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
   # 其他设置
   Other:
     ufsClkGate: false
@@ -245,9 +281,21 @@ fast:
   #调速器参数值
   Govsets:
     schedutil:
-      path1: ""
-      path2: ""
-      path3: ""
+      path1: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path2: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
+      path3: 
+        SmallCore: ""
+        MediumCore: ""
+        BigCore: ""
+        SuperBigCore: ""
   # 其他设置
   Other:
     ufsClkGate: true
